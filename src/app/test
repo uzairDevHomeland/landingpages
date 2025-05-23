@@ -1,0 +1,2068 @@
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.intro-new-version__bg {
+  position: relative;
+}
+._container {
+  padding: 0 11.7rem;
+  margin: 0 auto;
+  width: 100%;
+}
+.intro-new-version__bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.intro-new-version__form {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 4rem;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  background: rgba(0, 0, 0, 0.15);
+}
+.intro-new-version__form-title {
+  font-family: "BwNistaInternationalMedium", serif;
+  font-weight: 400;
+  font-size: 4rem;
+  letter-spacing: -0.05em;
+  text-align: center;
+  color: #fff;
+  max-width: 45.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.intro-new-version__form-sub {
+  font-family: "BwNistaInternationalRegular", serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 4.2rem;
+  text-align: center;
+}
+.intro-new-version__form-from {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+}
+.intro-new-version__form-input-wrapper {
+  margin-bottom: 1.3rem;
+  position: relative;
+}
+
+.intro-new-version__form-from input {
+  padding: 1.5rem 3.2rem !important;
+}
+
+.form input {
+  width: 100%;
+  height: 100%;
+  background: 0 0;
+  color: #aaa;
+  font-family: var(--font);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0 4rem 0 2.4rem !important;
+  -webkit-transition: all 400ms ease-in-out;
+  -o-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+  border: 0.07rem solid transparent;
+}
+
+.intro-new-version__form-input {
+  font-family: "BwNistaInternationalRegular", serif !important;
+  font-weight: 400 !important;
+  font-size: 2rem !important;
+  color: #fff !important;
+  width: 100% !important;
+  background-color: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  padding: 1.5rem 3.2rem !important;
+}
+.intro-new-version__form-icon {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+
+  color: white;
+}
+.intro-new-version__form-from input {
+  padding: 1.5rem 3.2rem !important;
+}
+
+.form input:focus {
+  outline: 0 !important;
+  outline-offset: 0 !important;
+}
+
+.btn {
+  position: relative;
+  height: 5rem;
+  padding: 0 1.3rem 0 1.4rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form .btn {
+  display: block;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+  background-color: inherit;
+}
+
+.btn p {
+  font-family: var(--font);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: normal;
+  animation: leftToRight 1s ease-in-out infinite alternate;
+  -webkit-animation: leftToRight 3s ease-in-out infinite alternate;
+}
+
+.btn span {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  height: 4rem;
+  width: 4rem;
+  transition: all 0.4s ease-in-out;
+  border-radius: 50%;
+  border: 0.1rem solid var(--color-foreground);
+}
+
+@keyframes leftToRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(20px);
+  }
+}
+
+/* For wider browser compatibility */
+@-webkit-keyframes leftToRight {
+  from {
+    -webkit-transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(20px);
+  }
+}
+
+.btn:hover span {
+  border-radius: 4rem;
+  width: 100%;
+}
+
+.intro-new-version__left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  z-index: 1;
+}
+
+.intro-new-version__subtitle {
+  font-family: "BwNistaInternationalLight", serif;
+  font-weight: 300;
+  font-size: 3.2rem;
+  color: #fff;
+  margin-bottom: 3rem;
+}
+
+.intro-new-version__title {
+  font-family: "Roboto", serif;
+  font-weight: 500;
+  font-size: 12.8rem;
+  letter-spacing: -0.04em;
+  color: #fff;
+  margin-bottom: 4rem;
+  line-height: 0.8;
+}
+
+.intro-new-version .intro-new-version__text-wrapper-desc {
+  display: block;
+}
+
+.intro-new-version__text {
+  font-family: "BwNistaInternationalRegular", serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #fff;
+  max-width: 70.9rem;
+  line-height: 1.3;
+}
+.intro-new-version__list-title {
+  font-family: "BwNistaInternationalRegular", serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.intro-new-version__lists {
+  margin-bottom: 7.2rem;
+}
+
+.intro-new-version__list-sub {
+  font-family: "BwNistaInternationalRegular", serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #fff;
+  margin-left: 7rem;
+}
+
+.intro-new-version .intro-new-version__text-wrapper-mob {
+  display: none;
+}
+.intro-new-version__text {
+  font-family: "BwNistaInternationalRegular", serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #fff;
+  max-width: 70.9rem;
+  line-height: 1.3;
+}
+
+.intro-new-version__items {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.intro-new-version__item-top {
+  font-family: "Roboto", serif;
+  font-weight: 700;
+  font-size: 3.2rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.intro-new-version__item-bot {
+  font-family: "BwNistaInternationalMedium", serif;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.intro-new-version__item-line {
+  height: 11.4rem;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.intro-new-version__item-top {
+  font-family: "Roboto", serif;
+  font-weight: 700;
+  font-size: 3.2rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.intro-new-version__item-bot {
+  font-family: "BwNistaInternationalMedium", serif;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.about__cont-top {
+  padding-top: 17rem;
+  padding-bottom: 12rem;
+  display: flex;
+  align-items: center;
+}
+
+.about__cont-top {
+  padding-top: 17rem;
+  padding-bottom: 12rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.about__cont-top-title {
+  font-size: 15rem;
+  font-weight: 400;
+  transition: transform 0.8s ease;
+}
+
+.about__cont-top-title {
+  font-size: 15rem;
+  font-weight: 400;
+  -webkit-transition: -webkit-transform 0.8s ease;
+  -o-transition: transform 0.8s ease;
+  transition: transform 0.8s ease;
+  transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+}
+
+.about__cont-top-line::after {
+  content: "";
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+
+.about__cont-top-line::after {
+  top: 5rem;
+}
+
+.thank-you-modal.modal.fade {
+  display: none;
+}
+
+.thank-you-modal.show {
+  display: block;
+  position: fixed;
+  top: 20%;
+  left: 0;
+  z-index: 2000000;
+}
+
+html.swal2-shown,
+body.swal2-shown {
+  div:where(.swal2-container) div:where(.swal2-popup) {
+    width: 51.2rem;
+    padding: 0 0 2rem;
+    font-size: 1.6rem;
+  }
+}
+.popup.time-pop {
+  display: none !important;
+}
+@media (max-width: 768px) {
+  html.swal2-shown,
+  body.swal2-shown {
+    div:where(.swal2-container) div:where(.swal2-popup) {
+      width: 355px;
+      padding: 0 0 20px;
+      font-size: 16px;
+    }
+  }
+}
+
+.dev-logo {
+  max-width: 14.5rem;
+}
+
+@media (max-width: 768px) {
+  .dev-logo {
+    max-width: 65px;
+  }
+}
+
+@media (max-width: 1920px) and (min-width: 1200px) {
+  .about__cont-top-line::after {
+    top: 5rem;
+  }
+
+  .developer__content-left .box:nth-of-type(4) {
+    left: 15.5rem;
+  }
+
+  .about__cont-top-text {
+    max-width: 80rem;
+  }
+
+  .developer__content-right {
+    overflow: unset;
+  }
+
+  .header {
+    padding: 2rem 6rem;
+  }
+  .header__logo {
+    width: 20.2rem;
+  }
+
+  .preloader .preloader-logo {
+    width: 40vw;
+  }
+
+  .header__socials-phone {
+    width: 19.5rem;
+  }
+
+  .footer .form .form__input {
+    width: 31.5rem !important;
+  }
+}
+
+.box:last-child .some-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.box:last-child .some-box .small-text {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 901px) {
+  .box:last-child .some-box .small-text {
+    margin-left: 0rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .box:last-child .some-box .small-text {
+    margin-left: 0;
+  }
+}
+
+.preloader .preloader-log-white {
+  width: 100%;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1201px) and (max-width: 1920px) {
+  .developer__content-left .box:nth-of-type(1) {
+    top: 15rem;
+    left: 27.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .location.step-2 .location__marker-shadow svg {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .intro__content-center-bot {
+    margin-right: 7px;
+  }
+}
+
+.swal2-container.swal2-center.swal2-backdrop-show {
+  display: none !important;
+}
+
+.intro-text {
+  font-family: "Lato";
+}
+
+@media (min-width: 901px) {
+  .intro-title.intro-title-top,
+  .intro__content-center-bot {
+    position: relative;
+    top: -15px;
+  }
+
+  .intro-text {
+    position: relative;
+    top: -5px;
+  }
+  .intro-title-bot {
+    margin-left: 0rem;
+  }
+}
+
+.about__cont-top-title {
+  font-family: "Roboto";
+}
+
+.developer__desc {
+  font-family: "Lato";
+}
+
+@media (max-width: 900px) {
+  .intro-title,
+  .amenities__title,
+  .amenities__item-title {
+    font-family: "Roboto";
+    font-size: 20px;
+  }
+}
+.floorplan {
+  display: none !important;
+}
+
+.payment__info-text {
+  margin-left: -3.7rem;
+}
+@media (max-width: 768px) {
+  .payment__info-text {
+    margin-left: 0px;
+  }
+}
+
+.payment__info-text-sec {
+  margin-left: 6rem;
+}
+.header__list-item-anim {
+  animation: blink 1.3s infinite linear;
+  animation-play-state: running;
+}
+.header__list-item-anim:hover {
+  animation-play-state: paused;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .intro__content-center-bot {
+    margin-right: -17px;
+  }
+}
+
+.about {
+  max-width: 100%;
+  width: 100%;
+}
+.about__cont-top {
+  padding-top: 17rem;
+  padding-bottom: 12rem;
+  display: flex;
+  align-items: center;
+}
+.about__cont-top-title {
+  font-size: 15rem;
+  font-weight: 400;
+  transition: transform 0.8s ease;
+}
+.about__cont-top-line {
+  display: block;
+  width: 12rem;
+  height: 100%;
+  margin: 0 4rem;
+  position: relative;
+  margin-bottom: auto;
+}
+.about__cont-top-line::after {
+  content: "";
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+.about__cont-top-text {
+  font-size: 2rem;
+  max-width: 87rem;
+  line-height: 1.3;
+}
+.about__cont-img-wrap-mob-bg {
+  display: none;
+  transition: opacity 0.6s ease-in-out;
+}
+.about__cont-img-wrap {
+  padding: 0 30px;
+  padding-bottom: 50px;
+  transform: scale(0.7);
+  transition: transform 0.6s ease-in-out;
+}
+.about__cont-img-wrap.active {
+  transform: scale(1);
+}
+.about__cont-img-wrap.active .about__cont-img-wrap-mob-bg {
+  opacity: 1;
+}
+@media (max-width: 1100px) {
+  .about__cont-img-wrap {
+    padding-bottom: 0;
+  }
+}
+.about__cont-img {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .about {
+    max-width: 100%;
+    width: 100%;
+  }
+  .about ._container {
+    padding: 0 30px;
+  }
+  .about__cont {
+    padding-top: 100px;
+  }
+  .about__cont-top {
+    padding-top: 0;
+    padding-bottom: 0;
+    display: block;
+  }
+  .about__cont-top-title {
+    font-size: 36px;
+    font-weight: 400;
+    transition: transform 0.8s ease;
+    margin-bottom: 20px;
+  }
+  .about__cont-top-line {
+    display: none;
+  }
+  .about__cont-top-text {
+    font-size: 16px;
+    line-height: 19px;
+    max-width: 100%;
+    position: relative;
+    z-index: 3;
+  }
+  .about__cont-img-wrap {
+    margin-top: -18px;
+    padding: 0;
+    padding-bottom: 0;
+    transform: scale(0.7);
+    height: 410px;
+    position: relative;
+  }
+  .about__cont-img-wrap-mob-bg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0;
+  }
+  .about__cont-img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+}
+.about__cont-top__items {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 22px;
+  height: 5.4rem;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .about__cont-top__items {
+    display: none;
+  }
+}
+.about__cont-top__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.about__cont-top__item img {
+  width: 4.2rem;
+  height: 4.2rem;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.about__cont-top__item-text h4 {
+  font-family: "BwNistaInternationalMedium";
+  font-weight: 400;
+  font-size: 2.2rem;
+  line-height: 91%;
+  color: rgba(255, 255, 255, 0.8);
+}
+.about__cont-top__item-text p {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 143%;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+}
+.about__cont-top__item-line {
+  width: 1px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.about__cont-top__mob-items {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding: 0px 15px 35px 15px;
+  position: relative;
+}
+.about__cont-top__mob-items::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.about__cont-top__mob-items-text {
+  position: relative;
+  height: 100px;
+  margin-top: 16px;
+}
+.about__cont-top__mob-items-wrapper {
+  display: none;
+}
+@media (max-width: 768px) {
+  .about__cont-top__mob-items-wrapper {
+    display: block;
+  }
+}
+.about__cont-top__mob-item {
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.about__cont-top__mob-item.active {
+  scale: 1.6;
+}
+.about__cont-top__mob-item img {
+  width: 50px;
+  height: 50px;
+
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.about__cont-top__mob-item-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease 0s;
+}
+.about__cont-top__mob-item-text.active {
+  opacity: 1;
+  visibility: visible;
+}
+.about__cont-top__mob-item-text p {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 91%;
+  color: rgba(255, 255, 255, 1);
+}
+.about__cont-top__mob-item-text span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 143%;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+}
+
+.payment__text-subtitle {
+  max-width: 57.5rem;
+  margin-top: 0.3rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.payment__text-subtitle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 0.7rem;
+  height: 0.7rem;
+  background-color: #fff;
+  border-radius: 50%;
+}
+@media (max-width: 768px) {
+  .payment__text-subtitle {
+    display: none;
+  }
+}
+
+.payment button {
+  display: block;
+}
+
+.step-2 .masterplan__svg-pin {
+  opacity: 1;
+}
+.masterplan__svg-pin__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.masterplan__svg-pin {
+  opacity: 0;
+  transition: opacity 0.3s ease 0.3s;
+}
+.masterplan__svg-pin__wrapper img {
+  width: 57px;
+  height: 57px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #fff;
+}
+.masterplan__svg-pin__wrapper p {
+  margin-bottom: 5px;
+  font-size: 18px;
+  white-space: nowrap;
+}
+.masterplan__svg-pin svg {
+} /*# sourceMappingURL=location.css.map */
+
+.amenities__item::after {
+  z-index: 2;
+}
+
+.masterplan__svg-pin__text {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.masterplan__svg-pin__text span {
+  font-size: 16px;
+} /*# sourceMappingURL=location.css.map */
+
+.time-pop-img {
+  position: absolute;
+  overflow: hidden;
+  z-index: 9999;
+  object-fit: cover;
+  height: 77rem;
+  pointer-events: none;
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .time-pop .popup__wrapper {
+    padding: 20rem;
+  }
+  .time-pop .time__title {
+    padding-top: 25px !important;
+  }
+}
+
+.popup__img {
+  width: 28.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 768px) {
+  .popup__img {
+    display: none;
+  }
+
+  .time-pop-img {
+    max-width: 300px;
+    width: 100%;
+    height: 176px;
+    top: 12%;
+    overflow: visible;
+    scale: 0.9;
+    display: block;
+  }
+  .time-pop-img img {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  .time-pop .popup__title {
+    font-size: 20px;
+    opacity: 1;
+    transform: translateY(95px);
+  }
+
+  .time-pop .popup__wrapper {
+    height: 90%;
+  }
+
+  .popup__subtitle {
+    display: none;
+  }
+
+  .time-pop .popup__exit {
+    right: 8px;
+    top: 10px;
+    opacity: 1;
+  }
+
+  .time-pop .popup__exit svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .time-pop .popup__socials {
+    transform: translateY(105px);
+  }
+
+  .time-pop .form {
+    opacity: 1;
+    transform: translateY(85px);
+  }
+}
+
+@media (max-width: 464px) {
+  .time-pop-img {
+    max-width: 100%;
+    width: calc(100% - 44px);
+    height: 176px;
+  }
+}
+
+/* не трогать пж */
+
+.header__logo img {
+  width: 70%;
+}
+
+@media (min-width: 901px) {
+  .intro-text {
+    position: relative;
+    top: -18px;
+  }
+}
+.payment {
+  height: 100lvh;
+  display: block !important;
+}
+
+.payment__wrapper {
+  position: relative;
+}
+.header__list li:nth-child(5) {
+  display: block !important;
+}
+.header__list li:nth-child(6) {
+  display: block !important;
+}
+.footer__list li:nth-child(6) {
+  display: block !important;
+}
+
+.developer__line {
+  transform: translateX(-1rem);
+  width: 22rem;
+}
+@media (max-width: 768px) {
+  .developer__line {
+    transform: translateX(0px);
+  }
+}
+.footer__logo {
+  transform: translateX(0.7rem);
+}
+@media (max-width: 768px) {
+  .footer__logo {
+    transform: translateX(0px);
+  }
+}
+
+@media (max-width: 768px) {
+  .developer__img {
+    position: relative;
+  }
+  .developer__img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (max-width: 768px) {
+  .amenities__item-text-wrap::after {
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 25px 30px;
+  }
+}
+
+/* location */
+
+.masterplan__wrapper {
+  position: relative;
+}
+
+.masterplan__hand {
+  display: none;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease;
+}
+.masterplan__hand.hide-hande {
+  display: none !important;
+}
+.masterplan__hand-img {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  animation: spin 2s infinite alternate;
+}
+@media (max-width: 768px) {
+  .masterplan__hand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
+} /*# sourceMappingURL=location.css.map */
+
+@media (min-width: 768px) {
+  .brochure__content-right {
+    margin-top: -45px;
+  }
+  .brochure__content-left {
+    margin-top: -45px;
+  }
+  .developer__item {
+    min-width: 12.5rem;
+    width: 100%;
+  }
+  .developer__text-wrapper {
+    width: 80%;
+  }
+  .intro__content-center-bot {
+    margin-right: 0px;
+  }
+}
+
+.footer__list li:nth-child(7),
+.header__list li:nth-child(6),
+.payment {
+  display: block !important;
+}
+.footer__list li:nth-child(7),
+.header__list li:nth-child(7),
+.payment {
+  display: block !important;
+}
+
+.hide-payment-this-site {
+}
+@media (max-width: 360px) {
+  .developer__item {
+    padding: 6px;
+  }
+  .developer__item__subtitle,
+  .developer__item__title {
+    font-size: 10px;
+  }
+}
+
+.intro-title-bot {
+  margin-left: 9rem;
+}
+
+@media (max-width: 479px) {
+  .intro-title-bot {
+    margin-left: 0;
+  }
+  .intro__content-center-bot {
+    margin-right: 2px;
+  }
+}
+
+.payment {
+}
+.developer__img-icon {
+  object-fit: contain;
+}
+.developer__item {
+  width: 100%;
+}
+
+.intro {
+  display: none !important;
+}
+
+.payment__text-mob {
+  padding-top: 22px;
+  text-align: center;
+  display: none;
+}
+@media (max-width: 768px) {
+  .payment__text-mob {
+    display: none;
+  }
+  .preloader {
+    padding: 0 100px;
+  }
+  .developer__img-icon {
+  }
+}
+
+.brochure__item-img-wrap {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.masterplan__project-name {
+  width: 100%;
+}
+
+.about__cont-top__items {
+  display: none;
+}
+.papayment__text-wrapper {
+  display: none;
+}
+.payment__line {
+  display: none;
+}
+.developer__text {
+  display: none;
+}
+.about__cont-top__mob-items-wrapper {
+  display: none;
+}
+
+@media (max-width: 498px) {
+  .developer__item__subtitle,
+  .developer__item__title {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .location {
+    height: calc(100lvh - 150px);
+  }
+  .masterplan__media {
+    padding-bottom: calc(var(--aspect-ratio) * 0%);
+    width: max(var(--aspect-ratio-width) * 3.2 * 1%, 100%);
+  }
+  .masterplan__wrapper {
+    height: calc(100lvh - 150px);
+  }
+  .masterplan__media-desc {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+  }
+}
+
+/* new popup */
+
+.new-form-brochure-wrapper {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .new-form-brochure-wrapper {
+    flex-direction: column;
+    gap: 0px;
+    justify-content: flex-start;
+  }
+  .new-form-brochure-wrapper-inputs {
+    width: 100%;
+  }
+  .option__content {
+    display: flex;
+    gap: 25px;
+  }
+  .new-form-brochure-wrapper-checkbok {
+    width: 100%;
+  }
+}
+
+.new-form-brochure-wrapper-container .title {
+  margin-bottom: 2rem;
+  font-family: "BwNistaInternationalRegular", serif !important;
+  font-weight: 400 !important;
+  font-size: 2rem !important;
+  color: rgba(0, 0, 0, 0.7) !important;
+  background-clip: text !important;
+}
+
+@media (max-width: 768px) {
+  .new-form-brochure-wrapper-container .title {
+    font-size: 16px !important;
+    margin-bottom: 10px;
+  }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-family: "BwNistaInternationalRegular", serif !important;
+  font-weight: 400 !important;
+  font-size: 1.6rem !important;
+  color: rgba(0, 0, 0, 0.7) !important;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .new-form-brochure-wrapper-container .option {
+    margin-bottom: 10px;
+    font-size: 16px !important;
+    color: rgba(0, 0, 0, 0.7) !important;
+    cursor: pointer;
+  }
+}
+
+.option input[type="radio"] {
+  background-clip: text !important;
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #444;
+  border-radius: 50%;
+  margin-right: 1rem;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  padding: 0px !important;
+}
+@media (max-width: 768px) {
+  .new-form-brochure-wrapper-container .option input[type="radio"] {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    padding: 0px !important;
+  }
+}
+
+.option input[type="radio"]:checked::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background: #444;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.new-form-brochure-wrapper-checkbok__line {
+  width: 1px;
+  height: 10.1rem;
+  background: #444;
+}
+.popup .form {
+  max-width: 65.6rem;
+}
+
+@media (max-width: 768px) {
+  .new-form-brochure-wrapper-container
+    .option
+    input[type="radio"]:checked::before {
+    width: 5px;
+    height: 5px;
+  }
+  .new-form-brochure-wrapper-checkbok__line {
+    display: none;
+  }
+  .time-pop-img {
+    top: 6%;
+  }
+  .time-pop .popup__socials {
+    transform: translateY(80px);
+    margin-top: 5px;
+  }
+  .time-pop .form {
+    transform: translateY(70px);
+  }
+  .popup .form button {
+    margin-top: 5px;
+  }
+}
+
+.payment {
+  height: 100lvh;
+  display: block !important;
+}
+.payment__wrapper {
+  position: relative;
+}
+.payment__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  height: 100lvh;
+}
+.payment__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+}
+
+.payment__container {
+  position: relative;
+  z-index: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 11.5rem;
+}
+.payment__top {
+  gap: 4rem;
+}
+.payment__container,
+.payment__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.payment__title {
+  font-family: var(--fontHell);
+  font-size: 12rem;
+  letter-spacing: -0.84rem;
+}
+.payment__line {
+  display: none;
+}
+.papayment__text-wrapper {
+  display: none;
+}
+.payment__text {
+  max-width: 57.5rem;
+  margin-top: 2.3rem;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: normal;
+}
+.payment__text-subtitle {
+  max-width: 57.5rem;
+  margin-top: 0.3rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.payment__text-subtitle {
+  max-width: 57.5rem;
+  margin-top: 0.3rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.payment__bot {
+  padding: 0 13rem 0 6.8rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.payment__text-mob {
+  padding-top: 22px;
+  text-align: center;
+  display: none;
+}
+.payment button {
+  display: block;
+}
+.payment button,
+.payment__percent-mob {
+  display: none;
+}
+.payment__info {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+.payment__bot,
+.payment__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.payment__num {
+  font-family: var(--fontHell) !important;
+  font-weight: 600;
+  line-height: normal !important;
+  position: relative;
+  overflow: hidden;
+}
+.payment__percent {
+  font-weight: 300;
+  line-height: normal;
+  z-index: 10;
+  position: absolute;
+  left: 31.5rem;
+  opacity: 0;
+}
+.payment__num,
+.payment__percent {
+  color: var(--light-color);
+  font-size: 25rem;
+  letter-spacing: -1.25rem;
+}
+.payment__info-text {
+  margin-left: -3.7rem;
+}
+.payment__info-text {
+  margin-left: 0.3rem;
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: normal;
+}
+.payment button,
+.payment__percent-mob {
+  display: none;
+}
+.payment__wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 1101px) {
+  .brochure {
+    position: relative;
+    height: 100svh;
+  }
+}
+
+.brochure__wrap {
+  max-width: 100%;
+  width: 100%;
+  height: 100svh;
+}
+.brochure__content {
+  padding-top: 6rem;
+  padding-left: 14rem;
+  padding-right: 14rem;
+  gap: 4rem;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.brochure__content,
+.brochure__content-left {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (min-width: 768px) {
+  .brochure__content-left {
+    margin-top: -45px;
+  }
+}
+@media (min-width: 1101px) {
+  .brochure__content-left {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+}
+@media (min-width: 1101px) {
+  .brochure__content,
+  .brochure__content-left {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+@media (min-width: 1101px) {
+  .brochure__item {
+    max-width: 29rem;
+    opacity: 1;
+    -webkit-transition: opacity 0.8s ease, -webkit-transform 0.8s ease;
+    -o-transition: transform 0.8s ease, opacity 0.8s ease;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    transition: transform 0.8s ease, opacity 0.8s ease,
+      -webkit-transform 0.8s ease;
+  }
+}
+.brochure__item-img-wrap {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+@media (min-width: 1101px) {
+  .brochure__item-img-wrap {
+    max-width: 5rem;
+    margin-bottom: 20px;
+  }
+}
+.amenities__item-title-desc {
+  font-size: 20px;
+  margin-bottom: 1rem;
+  font-family: "BwNistaInternationalMedium";
+}
+@media (min-width: 1101px) {
+  .brochure__item p {
+    font-size: 2rem;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+@media (max-width: 1600px) {
+  .brochure__content-center {
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center ;
+  }
+}
+@media (min-width: 1101px) {
+  .brochure__content-center {
+    position: relative;
+    /* max-width: 81.5rem; */
+    width: 100%;
+    padding-top: 5rem;
+  }
+}
+@media (min-width: 1101px) {
+  .brochure__content-center-img-wrap {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    display: flex;
+    -webkit-transition: top 0.8s ease, -webkit-transform 0.8s ease;
+    -o-transition: transform 0.8s ease, top 0.8s ease;
+    transition: transform 0.8s ease, top 0.8s ease;
+    transition: transform 0.8s ease, top 0.8s ease, -webkit-transform 0.8s ease;
+  }
+}
+@media (min-width: 1101px) {
+  .brochure__content-center img,
+  .brochure__item img {
+    width: 80%;
+  }
+}
+img {
+  vertical-align: top;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+@media (min-width: 1101px) {
+  .brochure__content-center-box {
+    opacity: 1;
+    -webkit-transition: opacity 0.8s ease, -webkit-transform 0.8s ease;
+    -o-transition: transform 0.8s ease, opacity 0.8s ease;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    transition: transform 0.8s ease, opacity 0.8s ease,
+      -webkit-transform 0.8s ease;
+  }
+}
+@media (min-width: 1101px) {
+  .brochure__content-center-title {
+    font-family: var(--fontHell);
+    font-size: 3.2rem;
+    font-weight: 400;
+    max-width: 32rem;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 6rem;
+  }
+}
+
+.brochure__content-center-box .form {
+  max-width: 32rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+.brochure__content-center-box .form .form__wrap {
+  border-radius: 0;
+  background: #1e1e1e;
+  border: 1px solid transparent;
+  width: 100%;
+  position: relative;
+  z-index: 9;
+  height: 4rem;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  margin-bottom: 1rem;
+}
+.brochure__content-center-box .form .form input {
+  width: 100%;
+  height: 100%;
+  background: 0 0;
+  color: #aaa;
+  font-family: var(--font);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0 4rem 0 2.4rem !important;
+  -webkit-transition: all 400ms ease-in-out;
+  -o-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+  border: 0.07rem solid transparent;
+}
+
+    .brochure__content {
+        padding-top: 6rem;
+        padding-left: 14rem;
+        padding-right: 14rem;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+  
+}
+
+
+
+
+
+
+
+      <section className="about" id="about">
+        <div className="about__wrap">
+          <div className="about__cont">
+            <div className="about__cont-top _container">
+              <h3 className="about__cont-top-title">About</h3>
+
+              <div className="about__cont-top-line"></div>
+
+              <div className="about__cont-top-text__wrapper">
+                <p className="about__cont-top-text">
+                  Binghatti Skyhall sets a new standard of living with its smart
+                  home technology and luxurious amenities. Located in Business
+                  Bay, this development offers spacious studio and 1-bedroom
+                  apartments, along with world-className features including
+                  fully equipped kitchens, fitness facilities, and an indoor
+                  pool. It’s an ideal investment for those seeking convenience,
+                  luxury, and cutting-edge innovation.
+                </p>
+                <div className="about__cont-top__items">
+                  <div className="about__cont-top__item">
+                    <img
+                      src="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-03/dubai_science_park_dsp__cover.webp"
+                      alt=""
+                    />
+                    <div className="about__cont-top__item-text">
+                      <h4>Dubai Science Park</h4>
+                      <p>A thriving innovation hub</p>
+                    </div>
+                  </div>
+                  <div className="about__cont-top__item-line"></div>
+                  <div className="about__cont-top__item">
+                    <img
+                      src="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-03/_Cam004_Post_3.webp"
+                      alt=""
+                    />
+                    <div className="about__cont-top__item-text">
+                      <h4>Accessibility to Metro</h4>
+                      <p>Directly connected via a pedestrian bridge</p>
+                    </div>
+                  </div>
+                  <div className="about__cont-top__item-line"></div>
+                  <div className="about__cont-top__item">
+                    <img
+                      src="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-03/Frame%201000003002.png"
+                      alt=""
+                    />
+                    <div className="about__cont-top__item-text">
+                      <h4>Certificate from Dubai Cares</h4>
+                      <p>Every owner gets a certificate of contribution</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="about__cont-top__mob-items-wrapper">
+                  <div className="about__cont-top__mob-items">
+                    <div className="about__cont-top__mob-item active">
+                      <img
+                        src="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-03/dubai_science_park_dsp__cover.webp"
+                        alt=""
+                      />
+                    </div>
+                    <div className="about__cont-top__mob-item">
+                      <img
+                        src="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-03/_Cam004_Post_3.webp"
+                        alt=""
+                      />
+                    </div>
+                    <div className="about__cont-top__mob-item">
+                      <img
+                        src="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-03/Frame%201000003002.png"
+                        alt=""
+                      />
+                    </div>
+                    <div className="about__cont-top__mob-item">
+                      <img
+                        src="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-01/dew.webp"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div className="about__cont-top__mob-items-text">
+                    <div className="about__cont-top__mob-item-text active">
+                      <p>Dubai Science Park</p>
+                      <span>A thriving innovation hub</span>
+                    </div>
+                    <div className="about__cont-top__mob-item-text">
+                      <p>Accessibility to Metro</p>
+                      <span>Directly connected via a pedestrian bridge</span>
+                    </div>
+                    <div className="about__cont-top__mob-item-text">
+                      <p>Certificate from Dubai Cares</p>
+                      <span>
+                        Every owner gets a certificate of contribution
+                      </span>
+                    </div>
+                    <div className="about__cont-top__mob-item-text">
+                      <p>Schools and Clinics</p>
+                      <span>perfect for families</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="payment active" id="payment">
+        <div className="payment__wrapper">
+          <div className="payment__img">
+            <img
+              data-img="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-03/payment.jpg"
+              alt=""
+              src="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-03/payment.jpg"
+            />
+          </div>
+          <div className="payment__container _container">
+            {/* <div className="payment__top">
+              <h2 className="payment__title">Payment Plan</h2>
+              <div className="payment__line"></div>
+
+              <div className="papayment__text-wrapper">
+                <p className="payment__text">Flexible payment options:</p>
+                <p className="payment__text-subtitle">
+                  Customizable 35/25/40 payment plan to fit your preferences.
+                </p>
+                <p className="payment__text-subtitle">
+                  Low Initial Payment – 15-20% on booking + 4% DLD.
+                </p>
+                <p className="payment__text-subtitle">
+                  Easy Post-Handover – Pay 40% over 2 years with minimal monthly
+                  installments.
+                </p>
+              </div>
+            </div> */}
+            <div className="payment__bot">
+              <div className="payment__info">
+                <div
+                  className="payment__num payment__num-1 odometer odometer-auto-theme"
+                  id="odometer"
+                  data-end="50"
+                >
+                  <div className="odometer-inside">
+                    <span className="odometer-digit">
+                      <span className="odometer-digit-spacer">5</span>
+                      <span className="odometer-digit-inner">
+                        <span className="odometer-ribbon">
+                          <span className="odometer-ribbon-inner">
+                            <span className="odometer-value">0</span>
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span className="odometer-digit">
+                      <span className="odometer-digit-spacer">%</span>
+                      <span className="odometer-digit-inner">
+                        <span className="odometer-ribbon">
+                          <span className="odometer-ribbon-inner">
+                            <span className="odometer-value"></span>
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <span className="payment__percent">%</span>
+                <p className="payment__info-text">During Construction</p>
+              </div>
+              <div className="payment__percent-mob">%</div>
+              <div className="payment__info">
+                <div
+                  className="payment__num payment__num-2 odometer odometer-auto-theme"
+                  id="odometer"
+                  data-end="30"
+                >
+                  <div className="odometer-inside">
+                    <span className="odometer-digit">
+                      <span className="odometer-digit-spacer">3</span>
+                      <span className="odometer-digit-inner">
+                        <span className="odometer-ribbon">
+                          <span className="odometer-ribbon-inner">
+                            <span className="odometer-value">0</span>
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                    <span className="odometer-digit">
+                      <span className="odometer-digit-spacer">%</span>
+                      <span className="odometer-digit-inner">
+                        <span className="odometer-ribbon">
+                          <span className="odometer-ribbon-inner">
+                            <span className="odometer-value"></span>
+                          </span>
+                        </span>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <span className="payment__percent">%</span>
+                <p className="payment__info-text payment__info-text-sec">
+                  on Handover{" "}
+                </p>
+              </div>
+            </div>
+
+            <button
+              className="btn popupBtn payment-btn popupBtn-new"
+              type="@@type"
+              fdprocessedid="2504jk"
+            >
+              <p>Book a Visit Today</p>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="brochure" className="brochure active active2">
+        <div className="brochure__wrap">
+          <div className="brochure__content">
+            <div className="brochure__content-left">
+              <div className="brochure__item">
+                <div className="brochure__item-img-wrap">
+                  <img
+                    data-img="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-01/pr%20landscaped.svg"
+                    alt=""
+                    src="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-01/pr%20landscaped.svg"
+                  />
+                </div>
+                <h6 className="amenities__item-title amenities__item-title-desc">
+                  CITY CONNECTIVITY
+                </h6>
+                <p>- Steps from Business Bay Canal &amp; Promenade </p>
+                <p>- Near Future Metro Station </p>
+                <p>- Easy Access to Al Khail Road &amp; Downtown</p>
+                <p>- 8 mins to Dubai Mall | 14 mins to DXB Airport </p>
+              </div>
+              <div className="brochure__item">
+                <div className="brochure__item-img-wrap">
+                  <img
+                    data-img="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-01/pr%20pool.svg"
+                    alt=""
+                    src="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-01/pr%20pool.svg"
+                  />
+                </div>
+                <h6 className="amenities__item-title amenities__item-title-desc">
+                  PRIME CONVENIENCE
+                </h6>
+                <p>
+                  - High ROI Potential – Strong demand for rental &amp; resale
+                </p>
+                <p>- Best Value – Unmatched location &amp; price</p>
+                <p>- Freehold Ownership</p>
+                <p>- No Property Tax</p>
+                <p>- 10-year Golden Visa Eligibility</p>
+              </div>
+            </div>
+
+            <div className="brochure__content-center">
+              <div className="brochure__content-center-img-wrap">
+                <img
+                  className="brochure__content-center-img"
+                  data-img="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-03/Binghatti%20Skyhall%20br.webp"
+                  alt=""
+                  src="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-03/Binghatti%20Skyhall%20br.webp"
+                />
+              </div>
+
+              <div className="brochure__content-center-box">
+                <h4 className="brochure__content-center-title">
+                  Fill in the form to get detailed brochure
+                </h4>
+
+                <form className="form" data-gtag-submit="">
+                  <div className="@@section__form-wrap form__wrap">
+                    <input
+                      className="form__input"
+                      type="text"
+                      name="name"
+                      placeholder="Your name"
+                      required=""
+                      fdprocessedid="q1ilf"
+                    />
+                    <span className="form-icons input-icon"></span>
+                    <span className="form-times input-icon hidden"></span>
+                  </div>
+
+                  <div className="@@section__form-wrap form__wrap">
+                    <input
+                      className="form__input"
+                      type="email"
+                      name="email"
+                      placeholder="Your e-mail"
+                      required=""
+                      fdprocessedid="3nx3rh"
+                    />
+                    <span className="form-icons input-icon"></span>
+                    <span className="form-times input-icon hidden"></span>
+                  </div>
+
+                  <div className="@@section__form-wrap form__wrap">
+                    <span className="form-icons input-icon"></span>
+                    <span className="form-times input-icon hidden"></span>
+                  </div>
+
+                  <button
+                    className="btn @@btnClass"
+                    type="submit"
+                    fdprocessedid="n9pui"
+                  >
+                    <p>Download</p>
+                    <span></span>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <div className="brochure__content-right">
+              <div className="brochure__item">
+                <div className="brochure__item-img-wrap">
+                  <img
+                    data-img="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-01/pr%20gym.svg"
+                    alt=""
+                    src="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-01/pr%20gym.svg"
+                  />
+                </div>
+                <h6 className="amenities__item-title amenities__item-title-desc">
+                  INNOVATION HUB
+                </h6>
+                <p>- Smart Home System</p>
+                <p>
+                  - World-className amenities including an indoor gym, pools,
+                  and more{" "}
+                </p>
+              </div>
+              <div className="brochure__item">
+                <div className="brochure__item-img-wrap">
+                  <img
+                    data-img="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-01/Cafe.svg"
+                    alt=""
+                    src="https://drupal-landings.s3.eu-west-1.amazonaws.com/sky-hills-astra/s3fs-public/2025-01/Cafe.svg"
+                  />
+                </div>
+                <h6 className="amenities__item-title amenities__item-title-desc">
+                  FURNISHED LIVING
+                </h6>
+                <p>- Fully Equipped Kitchens</p>
+                <p>
+                  - Premium Amenities including Pool Deck and Fitness Center
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
