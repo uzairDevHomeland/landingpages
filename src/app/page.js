@@ -17,10 +17,11 @@ import {
   Home,
   Bed,
 } from "lucide-react";
-
+import { useInView } from "react-intersection-observer";
 import { Button } from "./components/ui/button";
 import { Card, CardContent } from "./components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
+import React from "react";
 import {
   Dialog,
   DialogContent,
@@ -28,9 +29,14 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./components/ui/dialog";
+import CountUp from "react-countup";
+
 export default function Main() {
   // Handle form submission (mock implementation, adjust as needed)
-
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = "/ALTAN_DCH_FLOORPLANS.pdf"; // Path relative to `public`
@@ -260,14 +266,16 @@ export default function Main() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-                A New Standard of Waterfront Living in Dubai’s Greenest Enclave
+                An Exclusive Waterfront Lifestyle Amid Dubai’s Greenest
+                Surroundings
               </h2>
               <p className="text-lg text-white mb-6 leading-relaxed">
-                Step into a world where modern elegance meets natural beauty.
-                Altan, located in the heart of the Green Gate District at Dubai
-                Creek Harbour, offers a lifestyle of serenity, sophistication,
-                and spectacular views — all just 10 minutes from Downtown Dubai
-                and the international airport.
+                Experience a new era of refined waterfront living in Dubai’s
+                most verdant enclave. Nestled within the lush Green Gate
+                District of Dubai Creek Harbour, Altan blends timeless design
+                with nature’s calm — offering panoramic views, tranquil
+                surroundings, and effortless access to the city. this is where
+                urban convenience meets natural harmony.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                 <div className="flex items-start gap-3">
@@ -339,14 +347,38 @@ export default function Main() {
 
         <div className="xl:flex-row container mx-auto flex-col flex gap-10 z-0 justify-between w-full md:px-20 px-4 ">
           <div className="plan">
-            <p className="md:text-[200px] text-9xl text-white">80 %</p>
+            <div ref={ref}>
+              {inView ? (
+                <CountUp
+                  className="md:text-[200px] text-9xl text-white"
+                  start={1000}
+                  end={80}
+                 duration={10}
+                  suffix=" %"
+                />
+              ) : (
+                <p>Waiting to come into view...</p>
+              )}
+            </div>
 
             <div className="md:text-5xl text-2xl text-white">
               During Construction
             </div>
           </div>
           <div className="plan">
-            <p className="md:text-[200px] text-9xl text-white">20 %</p>
+            <div ref={ref}>
+              {inView ? (
+                <CountUp
+                  className="md:text-[200px] text-9xl text-white"
+                  start={1000}
+                  end={20}
+                  duration={10}
+                  suffix=" %"
+                />
+              ) : (
+                <p>Waiting to come into view...</p>
+              )}
+            </div>
 
             <div className="md:text-5xl text-2xl text-white">on Handover</div>
           </div>
@@ -657,9 +689,17 @@ export default function Main() {
             Delivered approximatelt 118,400+ Units
           </p>
         </div>
-        <div className="xl:flex-row  h-[80vh] mx-auto flex-col justify-center items-center flex gap-10 z-0 backdrop-brightness-50  w-full  bg-[url('/developers.jpg')] bg-fixed bg-cover bg-center  ">
+        <div className="xl:flex-row  h-[40vh] mx-auto flex-col justify-center items-center flex gap-10 z-0 backdrop-brightness-50  w-full  bg-[url('/developers.jpg')] bg-fixed bg-cover bg-center  ">
           <div className="flex flex-col gap-4 p-6 md:p-0 items-center justify-center backdrop-brightness-[.2] h-full w-full">
-            <h2 className="text-white text-7xl">EMAAR</h2>
+            <h2 className="text-white text-7xl">
+              <Image
+                src="/Emaar Logo.png"
+                alt="emaar"
+                width={280}
+                height={32}
+                className="whatsapp-icon"
+              />
+            </h2>
 
             <h4 className="text-white text-3xl">
               EMAAR’S REVENUE FOR 2024 – AED 35.5 Bn
@@ -754,7 +794,8 @@ export default function Main() {
 
               {submissionStatus === "success" && (
                 <div className="success-message text-green-300">
-                Thank you! We’ve received your submission and will call you shortly
+                  Thank you! We’ve received your submission and will call you
+                  shortly
                 </div>
               )}
 
@@ -839,7 +880,7 @@ export default function Main() {
       </section>
 
       <section className="footer  bg-[#151E34]">
-        <div className="container mx-auto flex  flex-col md:flex-row gap-10  lg:p-0 p-6 justify-between">
+        <div className="container mx-auto flex   gap-10  lg:p-0 p-6 justify-center items-center">
           <div className="flex flex-col gap-10">
             <ul className="space-x-10 lg:flex lg:flex-row flex-col text-white">
               <li className="xl:text-xl text-base">
@@ -913,18 +954,6 @@ export default function Main() {
                   className="whatsapp-icon"
                 />
               </a>
-            </div>
-            <Image
-              className="h-[50px] w-[133px]"
-              src="/altanlogo.png"
-              alt="Vercel logomark"
-              width={80}
-              height={40}
-            />
-          </div>
-
-          <div className="mb-10 h-max">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => {
                   setOpen(true);

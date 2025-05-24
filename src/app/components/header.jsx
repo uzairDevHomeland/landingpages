@@ -6,9 +6,9 @@ function Header() {
     <div className="flex justify-between items-center p-4 text-white bg-[#151E34] sticky top-0 left-0 right-0 z-10">
       <Image
         className="h-[50px] w-[133px]"
-        src="/altanlogo.png"
+        src="/Atlan Logo.png"
         alt="Vercel logomark"
-        width={80}
+        width={300}
         height={40}
       />
 
