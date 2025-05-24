@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +25,25 @@ export default function RootLayout({ children }) {
       >
         {children}
       </body>
+
+      <Script
+        id="convolo-widget" // Unique ID for the script
+        strategy="afterInteractive" // Load after page becomes interactive
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function f() {
+              var widget_key = '90cd24adf617226f9fb6fe512569135d';
+              window.leadCM = { widget_key: widget_key };
+              var em = document.createElement('script');
+              em.type = 'text/javascript';
+              em.async = true;
+              em.src = 'https://app.convolo.ai/js/icallback.js?v=' + Math.random() + '&key=' + widget_key + '&uri=' + encodeURIComponent(window.location.href);
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(em, s);
+            })();
+          `,
+        }}
+      />
     </html>
   );
 }

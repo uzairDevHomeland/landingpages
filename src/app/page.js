@@ -44,48 +44,54 @@ export default function Home() {
   const [submitting, setSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(null);
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setSubmitting(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
 
-  const formData = new FormData(e.target);
-  const data = {
-    username: formData.get("name"), // Changed 'name' to 'username' to match your original question
-    email: formData.get("email"),
-    phone: formData.get("phone"),
+    const formData = new FormData(e.target);
+    const data = {
+      username: formData.get("name"), // Changed 'name' to 'username' to match your original question
+
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+    };
+
+    try {
+      const scriptUrl =
+        "https://script.google.com/macros/s/AKfycbyyGpvi3LHQ5Oa-mYMFgVbujaglYfSojsS0RqfcXhWtKUg5Ws75hQice97TjNR6T_Yq_A/exec";
+
+      const response = await fetch(scriptUrl, {
+        method: "POST", // Changed from GET to POST
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          ...data,
+          gid: "0",
+          website: "Altan",
+        }).toString(), // Include gid in the body
+        mode: "no-cors", // Required for Google Apps Script
+      });
+
+      // Since 'no-cors' prevents reading the response, assume success if no error
+      setSubmissionStatus("success");
+      e.target.reset(); // Reset form
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmissionStatus("error");
+    } finally {
+      setSubmitting(false);
+    }
   };
-
-  try {
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbyyGpvi3LHQ5Oa-mYMFgVbujaglYfSojsS0RqfcXhWtKUg5Ws75hQice97TjNR6T_Yq_A/exec';
-
-    const response = await fetch(scriptUrl, {
-      method: "POST", // Changed from GET to POST
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({ ...data, gid: '0' }).toString(), // Include gid in the body
-      mode: 'no-cors', // Required for Google Apps Script
-    });
-
-    // Since 'no-cors' prevents reading the response, assume success if no error
-    setSubmissionStatus("success");
-    e.target.reset(); // Reset form
-  } catch (error) {
-    console.error('Error submitting form:', error);
-    setSubmissionStatus("error");
-  } finally {
-    setSubmitting(false);
-  }
-};
   return (
     <>
       <Header />
 
       <div
         id="main"
-        className=" intro-new-version__bg  md:h-screen bg-[url('/main.jpg')] bg-cover bg-center flex items-center justify-center md:p-6"
+        className=" intro-new-version__bg  xl:h-screen bg-[url('/main.jpg')] bg-cover bg-center flex items-center justify-center md:p-6"
       >
-        <div className="container mx-auto px-4  md:flex-row flex-col flex justify-between  gap-10 p-10 md:p-0   ">
+        <div className="container mx-auto px-4  xl:flex-row flex-col flex justify-between  gap-10 p-10 md:p-0   ">
           <div className="intro-new-version__left">
             <p className="intro-new-version__subtitle md:mt-0  mt-10">
               By Emaar
@@ -698,12 +704,12 @@ const handleSubmit = async (e) => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-5">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-5 px-4">
           <Button
             onClick={handleDownloadPaymentPlan}
             size="lg"
             variant="outline"
-            className="border-emerald-700 text-emerald-700 hover:bg-emerald-700/10"
+            className="border-emerald-700 text-emerald-700 hover:bg-emerald-700/10 mx-4"
           >
             Download Payment Plan <ArrowRight className="ml-2 h-5 w-5" />
           </Button>

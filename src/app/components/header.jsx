@@ -12,19 +12,19 @@ function Header() {
         height={40}
       />
 
-      <ul className="space-x-12 md:flex hidden">
-        <li className="text-xl">
+      <ul className="space-x-10 lg:flex hidden">
+        <li className="xl:text-xl text-base">
           <a href="#main" className="hover:text-blue-500 transition-colors">
             Main
           </a>
         </li>
-        <li className="text-xl">
+        <li className="xl:text-xl text-base">
           <a href="#about" className="hover:text-blue-500 transition-colors">
             About
           </a>
         </li>
 
-        <li className="text-xl">
+        <li className="xl:text-xl text-base">
           <a
             href="#amenities"
             className="hover:text-blue-500 transition-colors"
@@ -32,17 +32,17 @@ function Header() {
             Amenities
           </a>
         </li>
-        <li className="text-xl">
+        <li className="xl:text-xl text-base">
           <a href="#payment" className="hover:text-blue-500 transition-colors">
             Payment Plan
           </a>
         </li>
-        <li className="text-xl">
+        <li className="xl:text-xl text-base">
           <a href="#brochure" className="hover:text-blue-500 transition-colors">
             Brochure
           </a>
         </li>
-        <li className="text-xl">
+        <li className="xl:text-xl text-base">
           <a href="#location" className="hover:text-blue-500 transition-colors">
             Location
           </a>

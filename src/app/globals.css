@@ -305,10 +305,10 @@ button {
 }
 
 .whatsapp-fixed {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 1000;
+    z-index: 1000;
+    position: fixed;
+    bottom: 8rem;
+    right: 3rem;
 }
 
 .whatsapp-button {
@@ -336,8 +336,8 @@ button {
 /* Mobile optimization */
 @media (max-width: 768px) {
   .whatsapp-fixed {
-    bottom: 1rem;
-    right: 1rem;
+    bottom: 4rem;
+    right:.5rem;
   }
   
   .whatsapp-button {
