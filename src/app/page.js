@@ -647,7 +647,7 @@ export default function Main() {
           </p>
         </div>
         <div className="xl:flex-row  h-[80vh] mx-auto flex-col justify-center items-center flex gap-10 z-0 backdrop-brightness-50  w-full  bg-[url('/developers.jpg')] bg-fixed bg-cover bg-center  ">
-          <div className="flex flex-col gap-4 items-center justify-center backdrop-brightness-[.2] h-full w-full">
+          <div className="flex flex-col gap-4 p-6 md:p-0 items-center justify-center backdrop-brightness-[.2] h-full w-full">
             <h2 className="text-white text-7xl">EMAAR</h2>
 
             <h4 className="text-white text-3xl">
@@ -825,6 +825,187 @@ export default function Main() {
             </div>
           </DialogContent>
         </Dialog>
+      </section>
+
+      <section className="footer  bg-black">
+        <div className="container mx-auto flex  flex-col md:flex-row gap-10  lg:p-0 p-6 justify-between">
+        
+        <div className="flex flex-col gap-10">
+          <ul className="space-x-10 lg:flex lg:flex-ro flex-col text-white">
+            <li className="xl:text-xl text-base">
+              <a href="#main" className="hover:text-blue-500 transition-colors">
+                Main
+              </a>
+            </li>
+            <li className="xl:text-xl text-base">
+              <a
+                href="#about"
+                className="hover:text-blue-500 transition-colors"
+              >
+                About
+              </a>
+            </li>
+
+            <li className="xl:text-xl text-base">
+              <a
+                href="#amenities"
+                className="hover:text-blue-500 transition-colors"
+              >
+                Amenities
+              </a>
+            </li>
+            <li className="xl:text-xl text-base">
+              <a
+                href="#payment"
+                className="hover:text-blue-500 transition-colors"
+              >
+                Payment Plan
+              </a>
+            </li>
+            <li className="xl:text-xl text-base">
+              <a
+                href="#brochure"
+                className="hover:text-blue-500 transition-colors"
+              >
+                Brochure
+              </a>
+            </li>
+            <li className="xl:text-xl text-base">
+              <a
+                href="#location"
+                className="hover:text-blue-500 transition-colors"
+              >
+                Location
+              </a>
+            </li>
+          </ul>  
+          
+           <div className="flex space-x-4 text-xl items-center text-white">
+          <a href="tel:+971556610000"> +971556610000</a>
+
+          <a
+            href="https://api.whatsapp.com/send/?phone=971556610000&text=Hello&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Contact us on WhatsApp"
+            className="whatsapp-link"
+            role="link"
+            aria-label="Contact via WhatsApp"
+          >
+            <Image
+              src="/whatapplogo.svg"
+              alt="WhatsApp logo"
+              width={26}
+              height={26}
+              className="whatsapp-icon"
+            />
+          </a>
+        </div>
+             <Image
+                className="h-[50px] w-[133px]"
+                src="/altanlogo.png"
+                alt="Vercel logomark"
+                width={80}
+                height={40}
+              />
+
+
+        </div>
+
+
+  <div className="mb-10 h-max">
+            <h2 className="intro-new-version__form-title">
+            Request a Call
+            </h2>
+          
+
+            {submissionStatus === "success" && (
+              <div className="success-message text-green-300">
+                Thank you! Your submission has been received!
+              </div>
+            )}
+
+            {submissionStatus === "error" && (
+              <div className="error-message text-red-300">
+                Something went wrong. Please try again.
+              </div>
+            )}
+
+            <form
+              className="intro-new-version__form-from form"
+              onSubmit={handleSubmit}
+              data-gtag-submit=""
+            >
+              {/* Name Input */}
+              <div className="intro-new-version__form-input-wrapper">
+                <input
+                  className="intro-new-version__form-input"
+                  type="text"
+                  placeholder="Your name"
+                  name="name"
+                  required
+                />
+                <div className="intro-new-version__form-icon">
+                  <img
+                    src="https://d3b6muno9lbfvx.cloudfront.net/waterfront-template/s3fs-public/2024-11/input-name-icon.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              {/* Email Input */}
+              <div className="intro-new-version__form-input-wrapper">
+                <input
+                  className="intro-new-version__form-input"
+                  type="email"
+                  placeholder="Your e-mail"
+                  name="email"
+                  required
+                />
+                <div className="intro-new-version__form-icon">
+                  <img
+                    src="https://d3b6muno9lbfvx.cloudfront.net/waterfront-template/s3fs-public/2024-11/input-mail-icon.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              {/* Phone Input - Fixed name attribute */}
+              <div className="intro-new-version__form-input-wrapper intro-new-version__form-input-phone">
+                <input
+                  className="intro-new-version__form-input"
+                  type="tel"
+                  placeholder="Phone number"
+                  name="phone" // Changed from 'name' to 'phone'
+                  required
+                />
+                <div className="intro-new-version__form-icon">
+                  <img
+                    src="https://d3b6muno9lbfvx.cloudfront.net/waterfront-template/s3fs-public/2024-11/input-phone-icon.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              {/* Submit Button */}
+
+              <div className="intro-new-version__form-btn"></div>
+              <button
+                className="btn @@btnClass"
+                type="submit"
+                fdprocessedid="jq4wj"
+                disabled={submitting}
+              >
+                <p> {submitting ? "Submitting..." : "Submit"}</p>
+                <span></span>
+              </button>
+            </form>
+          </div>
+
+
+        
+        </div>
+     
       </section>
     </>
   );
