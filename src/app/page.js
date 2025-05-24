@@ -133,7 +133,7 @@ export default function Home() {
               <div className="intro-new-version__item-line"></div>
               <div className="intro-new-version__item">
                 <p className="intro-new-version__item-top desc2">
-                  Handover Q3 2026
+                  On handover (July 2029)
                 </p>
                 <p className="intro-new-version__item-bot">20% Down</p>
               </div>
@@ -633,88 +633,39 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="payment" className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              Payment Plan
-            </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Flexible 4-year payment plan designed to make your investment
-              journey smooth.
-            </p>
+   <div
+        id="payment"
+        className=" z-0  flex-col flex intro-new-version__bg xl:h-screen bg-[url('/main.jpg')] bg-cover bg-center  items-center justify-center md:p-6  "
+      >
+        <h3 className="text-white md:text-8xl text-3xl z-0 !text-left w-full md:px-20 px-4 md:mt-0  mt-10">
+          Payment Plan
+        </h3>
+
+        <div className="xl:flex-row flex-col flex gap-10 z-0 justify-between w-full md:px-20 px-4 ">
+          <div className="plan">
+            <p className="md:text-[200px] text-9xl text-white">80 %</p>
+
+            <div className="md:text-5xl text-2xl text-white">During Construction</div>
           </div>
+          <div className="plan">
+          <p className="md:text-[200px] text-9xl text-white">20 %</p>
 
-          <div className="max-w-4xl mx-auto bg-gray-50 rounded-xl p-8 shadow-sm">
-            <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-              <div className="text-center md:text-left mb-4 md:mb-0">
-                <h3 className="text-2xl font-bold text-gray-900">
-                  80:20 Payment Plan
-                </h3>
-                <p className="text-gray-700">Handover in July 2029</p>
-              </div>
-              <div className="flex items-center gap-2 bg-emerald-100 px-4 py-2 rounded-full">
-                <CreditCard className="h-5 w-5 text-emerald-700" />
-                <span className="font-medium text-emerald-700">
-                  4-Year Plan
-                </span>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <div className="flex flex-col md:flex-row justify-between p-4 border-b border-gray-200">
-                <div className="mb-2 md:mb-0">
-                  <span className="font-semibold text-gray-900">
-                    Down Payment
-                  </span>
-                </div>
-                <div className="flex justify-between md:block">
-                  <span className="text-gray-700">10%</span>
-                  <span className="md:ml-16 text-gray-700">On Booking</span>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row justify-between p-4 border-b border-gray-200">
-                <div className="mb-2 md:mb-0">
-                  <span className="font-semibold text-gray-900">
-                    During Construction
-                  </span>
-                </div>
-                <div className="flex justify-between md:block">
-                  <span className="text-gray-700">70%</span>
-                  <span className="md:ml-16 text-gray-700">
-                    in easy installments
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row justify-between p-4">
-                <div className="mb-2 md:mb-0">
-                  <span className="font-semibold text-gray-900">
-                    On Handover
-                  </span>
-                </div>
-                <div className="flex justify-between md:block">
-                  <span className="text-gray-700">20%</span>
-                  <span className="md:ml-16 text-gray-700">
-                    On handover (July 2029)
-                  </span>
-                </div>
-              </div>
-            </div>
+            <div className="md:text-5xl text-2xl text-white">on Handover</div>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-5 px-4">
-          <Button
-            onClick={handleDownloadPaymentPlan}
-            size="lg"
-            variant="outline"
-            className="border-emerald-700 text-emerald-700 hover:bg-emerald-700/10 mx-4"
-          >
-            Download Payment Plan <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-        </div>
-      </section>
+
+       <button  onClick={handleDownloadPaymentPlan}
+                className="btn @@btnClass"
+                type="submit"
+                fdprocessedid="jq4wj"
+               
+              >
+                <p>  Download Payment Plan</p>
+                <span></span>
+              </button>
+
+
+      </div>
 
       {/* CTA */}
       <section className="py-16 md:py-24 bg-black">
@@ -740,6 +691,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+   
 
       <div className="whatsapp-fixed">
         <a
