@@ -831,7 +831,7 @@ export default function Main() {
         <div className="container mx-auto flex  flex-col md:flex-row gap-10  lg:p-0 p-6 justify-between">
         
         <div className="flex flex-col gap-10">
-          <ul className="space-x-10 lg:flex lg:flex-ro flex-col text-white">
+          <ul className="space-x-10 lg:flex lg:flex-row flex-col text-white">
             <li className="xl:text-xl text-base">
               <a href="#main" className="hover:text-blue-500 transition-colors">
                 Main
