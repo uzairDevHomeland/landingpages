@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 function Header() {
   return (
-    <div className="flex justify-between items-center p-4 text-white bg-black sticky top-0 left-0 right-0 z-10">
+    <div className="flex justify-between items-center p-4 text-white bg-[#151E34] sticky top-0 left-0 right-0 z-10">
       <Image
         className="h-[50px] w-[133px]"
         src="/altanlogo.png"
@@ -50,7 +50,7 @@ function Header() {
       </ul>
 
       <div className="flex space-x-4 text-xl items-center">
-        <a href="tel:+971556610000"> +971556610000</a>
+        <a href="tel:+971556610000"> +971 55 661 0000</a>
 
         <a
           href="https://api.whatsapp.com/send/?phone=971556610000&text=Hello&type=phone_number&app_absent=0"

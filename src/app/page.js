@@ -84,12 +84,23 @@ export default function Main() {
 
       // Since 'no-cors' prevents reading the response, assume success if no error
       setSubmissionStatus("success");
+
+      setTimeout(() => {
+        setSubmissionStatus("");
+      }, 4000); // Reset after 4 seconds
+
+      // set
+
       setOpen(false); // closes the dialog
 
       e.target.reset(); // Reset form
     } catch (error) {
       console.error("Error submitting form:", error);
       setSubmissionStatus("error");
+
+      setTimeout(() => {
+        setSubmissionStatus("");
+      }, 4000); // Reset after 4 seconds
     } finally {
       setSubmitting(false);
     }
@@ -244,7 +255,7 @@ export default function Main() {
         </div>
       </div>
 
-      <section id="about" className="py-16 md:py-24 bg-black">
+      <section id="about" className="py-16 md:pb-24 bg-[#151E34]">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -354,7 +365,7 @@ export default function Main() {
         </button>
       </div>
       {/* Property Types */}
-      <section className="py-16 md:py-24 bg-black">
+      <section className="py-16 md:py-24 bg-[#151E34]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
@@ -463,7 +474,7 @@ export default function Main() {
       </section>
 
       {/* Amenities */}
-      <section id="amenities" className="py-16 md:py-24 bg-black">
+      <section id="amenities" className="pb-16 md:pb-24 bg-[#151E34]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
@@ -567,7 +578,7 @@ export default function Main() {
       </section>
 
       {/* Location */}
-      <section id="location" className="py-16 md:py-24 bg-black">
+      <section id="location" className="pb-16 md:pb-24 bg-[#151E34]">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -639,10 +650,10 @@ export default function Main() {
             <span className="pl-28 lg:text-white text-black ">Developer</span>
           </h3>
 
-          <p className="bg-black text-white text-3xl h-[100px] text-center p-4 ">
+          <p className="bg-[#151E34] text-white text-3xl h-[100px] text-center p-4 ">
             Since 2002
           </p>
-          <p className="bg-black text-white text-3xl h-[100px] text-center p-4 ">
+          <p className="bg-[#151E34] text-white text-3xl h-[100px] text-center p-4 ">
             Delivered approximatelt 118,400+ Units
           </p>
         </div>
@@ -681,7 +692,7 @@ export default function Main() {
       </div>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-black">
+      <section className="py-16 md:py-24 bg-[#151E34]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
             Own Your Dream Home Today
@@ -727,8 +738,8 @@ export default function Main() {
       </div>
       <section className="">
         <Dialog open={open} onOpenChange={setOpen}>
-          <DialogContent className="max-w-md p-6 bg-gray-800 border ">
-            <div className="intro-new-version__form h-max bg-gray-800">
+          <DialogContent className="max-w-md p-6 bg-[#151E34] border ">
+            <div className="intro-new-version__form h-max bg-[#151E34]">
               <DialogHeader>
                 <DialogTitle className="text-xl font-semibold mb-2">
                   <h2 className="intro-new-version__form-title">
@@ -743,7 +754,7 @@ export default function Main() {
 
               {submissionStatus === "success" && (
                 <div className="success-message text-green-300">
-                  Thank you! Your submission has been received!
+                Thank you! We’ve received your submission and will call you shortly
                 </div>
               )}
 
@@ -827,185 +838,107 @@ export default function Main() {
         </Dialog>
       </section>
 
-      <section className="footer  bg-black">
+      <section className="footer  bg-[#151E34]">
         <div className="container mx-auto flex  flex-col md:flex-row gap-10  lg:p-0 p-6 justify-between">
-        
-        <div className="flex flex-col gap-10">
-          <ul className="space-x-10 lg:flex lg:flex-row flex-col text-white">
-            <li className="xl:text-xl text-base">
-              <a href="#main" className="hover:text-blue-500 transition-colors">
-                Main
-              </a>
-            </li>
-            <li className="xl:text-xl text-base">
-              <a
-                href="#about"
-                className="hover:text-blue-500 transition-colors"
-              >
-                About
-              </a>
-            </li>
+          <div className="flex flex-col gap-10">
+            <ul className="space-x-10 lg:flex lg:flex-row flex-col text-white">
+              <li className="xl:text-xl text-base">
+                <a
+                  href="#main"
+                  className="hover:text-blue-500 transition-colors"
+                >
+                  Main
+                </a>
+              </li>
+              <li className="xl:text-xl text-base">
+                <a
+                  href="#about"
+                  className="hover:text-blue-500 transition-colors"
+                >
+                  About
+                </a>
+              </li>
 
-            <li className="xl:text-xl text-base">
-              <a
-                href="#amenities"
-                className="hover:text-blue-500 transition-colors"
-              >
-                Amenities
-              </a>
-            </li>
-            <li className="xl:text-xl text-base">
-              <a
-                href="#payment"
-                className="hover:text-blue-500 transition-colors"
-              >
-                Payment Plan
-              </a>
-            </li>
-            <li className="xl:text-xl text-base">
-              <a
-                href="#brochure"
-                className="hover:text-blue-500 transition-colors"
-              >
-                Brochure
-              </a>
-            </li>
-            <li className="xl:text-xl text-base">
-              <a
-                href="#location"
-                className="hover:text-blue-500 transition-colors"
-              >
-                Location
-              </a>
-            </li>
-          </ul>  
-          
-           <div className="flex space-x-4 text-xl items-center text-white">
-          <a href="tel:+971556610000"> +971556610000</a>
+              <li className="xl:text-xl text-base">
+                <a
+                  href="#amenities"
+                  className="hover:text-blue-500 transition-colors"
+                >
+                  Amenities
+                </a>
+              </li>
+              <li className="xl:text-xl text-base">
+                <a
+                  href="#payment"
+                  className="hover:text-blue-500 transition-colors"
+                >
+                  Payment Plan
+                </a>
+              </li>
+              <li className="xl:text-xl text-base">
+                <a
+                  href="#brochure"
+                  className="hover:text-blue-500 transition-colors"
+                >
+                  Brochure
+                </a>
+              </li>
+              <li className="xl:text-xl text-base">
+                <a
+                  href="#location"
+                  className="hover:text-blue-500 transition-colors"
+                >
+                  Location
+                </a>
+              </li>
+            </ul>
 
-          <a
-            href="https://api.whatsapp.com/send/?phone=971556610000&text=Hello&type=phone_number&app_absent=0"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Contact us on WhatsApp"
-            className="whatsapp-link"
-            role="link"
-            aria-label="Contact via WhatsApp"
-          >
+            <div className="flex space-x-4 text-xl items-center text-white">
+              <a href="tel:+971556610000"> +971 55 661 0000</a>
+
+              <a
+                href="https://api.whatsapp.com/send/?phone=971556610000&text=Hello&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Contact us on WhatsApp"
+                className="whatsapp-link"
+                role="link"
+                aria-label="Contact via WhatsApp"
+              >
+                <Image
+                  src="/whatapplogo.svg"
+                  alt="WhatsApp logo"
+                  width={26}
+                  height={26}
+                  className="whatsapp-icon"
+                />
+              </a>
+            </div>
             <Image
-              src="/whatapplogo.svg"
-              alt="WhatsApp logo"
-              width={26}
-              height={26}
-              className="whatsapp-icon"
+              className="h-[50px] w-[133px]"
+              src="/altanlogo.png"
+              alt="Vercel logomark"
+              width={80}
+              height={40}
             />
-          </a>
-        </div>
-             <Image
-                className="h-[50px] w-[133px]"
-                src="/altanlogo.png"
-                alt="Vercel logomark"
-                width={80}
-                height={40}
-              />
+          </div>
 
-
-        </div>
-
-
-  <div className="mb-10 h-max">
-            <h2 className="intro-new-version__form-title">
-            Request a Call
-            </h2>
-          
-
-            {submissionStatus === "success" && (
-              <div className="success-message text-green-300">
-                Thank you! Your submission has been received!
-              </div>
-            )}
-
-            {submissionStatus === "error" && (
-              <div className="error-message text-red-300">
-                Something went wrong. Please try again.
-              </div>
-            )}
-
-            <form
-              className="intro-new-version__form-from form"
-              onSubmit={handleSubmit}
-              data-gtag-submit=""
-            >
-              {/* Name Input */}
-              <div className="intro-new-version__form-input-wrapper">
-                <input
-                  className="intro-new-version__form-input"
-                  type="text"
-                  placeholder="Your name"
-                  name="name"
-                  required
-                />
-                <div className="intro-new-version__form-icon">
-                  <img
-                    src="https://d3b6muno9lbfvx.cloudfront.net/waterfront-template/s3fs-public/2024-11/input-name-icon.svg"
-                    alt=""
-                  />
-                </div>
-              </div>
-
-              {/* Email Input */}
-              <div className="intro-new-version__form-input-wrapper">
-                <input
-                  className="intro-new-version__form-input"
-                  type="email"
-                  placeholder="Your e-mail"
-                  name="email"
-                  required
-                />
-                <div className="intro-new-version__form-icon">
-                  <img
-                    src="https://d3b6muno9lbfvx.cloudfront.net/waterfront-template/s3fs-public/2024-11/input-mail-icon.svg"
-                    alt=""
-                  />
-                </div>
-              </div>
-
-              {/* Phone Input - Fixed name attribute */}
-              <div className="intro-new-version__form-input-wrapper intro-new-version__form-input-phone">
-                <input
-                  className="intro-new-version__form-input"
-                  type="tel"
-                  placeholder="Phone number"
-                  name="phone" // Changed from 'name' to 'phone'
-                  required
-                />
-                <div className="intro-new-version__form-icon">
-                  <img
-                    src="https://d3b6muno9lbfvx.cloudfront.net/waterfront-template/s3fs-public/2024-11/input-phone-icon.svg"
-                    alt=""
-                  />
-                </div>
-              </div>
-
-              {/* Submit Button */}
-
-              <div className="intro-new-version__form-btn"></div>
+          <div className="mb-10 h-max">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
+                onClick={() => {
+                  setOpen(true);
+                }}
                 className="btn @@btnClass"
                 type="submit"
                 fdprocessedid="jq4wj"
-                disabled={submitting}
               >
-                <p> {submitting ? "Submitting..." : "Submit"}</p>
+                <p> Request a Call</p>
                 <span></span>
               </button>
-            </form>
+            </div>
           </div>
-
-
-        
         </div>
-     
       </section>
     </>
   );
