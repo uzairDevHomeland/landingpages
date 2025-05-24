@@ -21,8 +21,16 @@ import {
 import { Button } from "./components/ui/button";
 import { Card, CardContent } from "./components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
-
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./components/ui/dialog";
 export default function Main() {
+  // Handle form submission (mock implementation, adjust as needed)
+
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = "/ALTAN_DCH_FLOORPLANS.pdf"; // Path relative to `public`
@@ -44,7 +52,7 @@ export default function Main() {
 
   const [submitting, setSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(null);
-
+  const [open, setOpen] = useState(false); // <-- control dialog open state
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -76,6 +84,8 @@ export default function Main() {
 
       // Since 'no-cors' prevents reading the response, assume success if no error
       setSubmissionStatus("success");
+      setOpen(false); // closes the dialog
+
       e.target.reset(); // Reset form
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -90,12 +100,12 @@ export default function Main() {
 
       <div
         id="main"
-        className=" intro-new-version__bg  xl:h-screen bg-[url('/main.jpg')] bg-cover bg-center flex items-center justify-center md:p-6"
+        className=" intro-new-version__bg  xl:h-max bg-[url('/main.jpg')] bg-fixed bg-cover bg-center flex items-center justify-center md:p-6"
       >
         <div className="container mx-auto px-4  xl:flex-row flex-col flex justify-between  gap-10 p-10 md:p-0   ">
           <div className="intro-new-version__left">
-            <p className="intro-new-version__subtitle md:mt-0  mt-10">
-              By Emaar
+            <p className="intro-new-version__subtitle md:mt-0  mt-10 !mb-4">
+              By EMAAR
             </p>
             <h2 className="intro-new-version__title">
               Altan at Dubai Creek Harbour
@@ -115,14 +125,13 @@ export default function Main() {
               </div>
             </div>
 
-            <div className="   intro-new-version__items md:flex-row flex-col md:gap-16 gap-1">
+            <div className="   intro-new-version__items md:flex-row flex-col items-center justify-center md:gap-8 gap-1">
               <div className="intro-new-version__item">
                 <p className="intro-new-version__item-top desc2">
                   Available Units:
                 </p>
                 <p className="intro-new-version__item-bot">
-                 Modern 1, 2 & 3-Bedroom Apartments
-Limited 3-Bedroom Park-Facing Townhouses
+                  Modern 1, 2 & 3-Bedroom Apartments
                 </p>
               </div>
               <div className="intro-new-version__item-line"></div>
@@ -130,7 +139,7 @@ Limited 3-Bedroom Park-Facing Townhouses
                 <p className="intro-new-version__item-top desc2">
                   Starting Price:
                 </p>
-                <p className="intro-new-version__item-bot">From AED  1.81M</p>
+                <p className="intro-new-version__item-bot">From AED 1.81M</p>
               </div>
               <div className="intro-new-version__item-line"></div>
               <div className="intro-new-version__item">
@@ -309,7 +318,41 @@ Limited 3-Bedroom Park-Facing Townhouses
           </div>
         </div>
       </section>
+      <div
+        id="payment"
+        className=" z-0  flex-col flex intro-new-version__bg xl:h-max bg-[url('/main.jpg')] bg-fixed bg-cover bg-center  items-center justify-center md:p-6  "
+      >
+        <h3 className="text-white container mx-auto md:text-8xl text-3xl z-0 !text-left w-full md:px-20 px-4 md:mt-0  mt-10">
+          Payment Plan
+        </h3>
 
+        <div className="xl:flex-row container mx-auto flex-col flex gap-10 z-0 justify-between w-full md:px-20 px-4 ">
+          <div className="plan">
+            <p className="md:text-[200px] text-9xl text-white">80 %</p>
+
+            <div className="md:text-5xl text-2xl text-white">
+              During Construction
+            </div>
+          </div>
+          <div className="plan">
+            <p className="md:text-[200px] text-9xl text-white">20 %</p>
+
+            <div className="md:text-5xl text-2xl text-white">on Handover</div>
+          </div>
+        </div>
+
+        <button
+          onClick={() => {
+            setOpen(true);
+          }}
+          className="btn @@btnClass"
+          type="submit"
+          fdprocessedid="jq4wj"
+        >
+          <p> Download Payment Plan</p>
+          <span></span>
+        </button>
+      </div>
       {/* Property Types */}
       <section className="py-16 md:py-24 bg-black">
         <div className="container mx-auto px-4">
@@ -326,9 +369,6 @@ Limited 3-Bedroom Park-Facing Townhouses
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {/* 1 Bedroom Card */}
             <div className="group relative glass border-2 rounded-2xl shadow-2xl p-8 transition-all hover:backdrop-blur-3xl hover:bg-white/40 hover:transform hover:-translate-y-2">
-              <div className="mb-6">
-                <Bed className="h-12 w-12 text-white" />
-              </div>
               <h3 className="text-2xl font-bold text-white mb-4">1 Bedroom</h3>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-2 text-gray-300">
@@ -340,17 +380,18 @@ Limited 3-Bedroom Park-Facing Townhouses
                   <span>From AED 1.81M</span>
                 </li>
               </ul>
-              <Button className="w-full text-white" onClick={handleDownload}>
+              <Button
+                className="w-full text-white"
+                onClick={() => {
+                  setOpen(true);
+                }}
+              >
                 View Plans
               </Button>
             </div>
 
             {/* 2 Bedroom Card */}
             <div className="group relative glass border-2 rounded-2xl shadow-2xl p-8 transition-all hover:backdrop-blur-3xl hover:bg-white/40 hover:transform hover:-translate-y-2">
-              <div className="mb-6 flex gap-2">
-                <Bed className="h-12 w-12 text-white" />
-                <Bed className="h-12 w-12 text-white" />
-              </div>
               <h3 className="text-2xl font-bold text-white mb-4">2 Bedroom</h3>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-2 text-gray-300">
@@ -362,18 +403,18 @@ Limited 3-Bedroom Park-Facing Townhouses
                   <span>From AED 2.71M</span>
                 </li>
               </ul>
-              <Button className="w-full text-white" onClick={handleDownload}>
+              <Button
+                className="w-full text-white"
+                onClick={() => {
+                  setOpen(true);
+                }}
+              >
                 View Plans
               </Button>
             </div>
 
             {/* 3 Bedroom Card */}
             <div className="group relative glass border-2 rounded-2xl shadow-2xl p-8 transition-all hover:backdrop-blur-3xl hover:bg-white/40 hover:transform hover:-translate-y-2">
-              <div className="mb-6 flex gap-2">
-                <Bed className="h-12 w-12 text-white" />
-                <Bed className="h-12 w-12 text-white" />
-                <Bed className="h-12 w-12 text-white" />
-              </div>
               <h3 className="text-2xl font-bold text-white mb-4">3 Bedroom</h3>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-2 text-gray-300">
@@ -385,16 +426,18 @@ Limited 3-Bedroom Park-Facing Townhouses
                   <span>From AED 4.11M</span>
                 </li>
               </ul>
-              <Button className="w-full text-white" onClick={handleDownload}>
+              <Button
+                className="w-full text-white"
+                onClick={() => {
+                  setOpen(true);
+                }}
+              >
                 View Plans
               </Button>
             </div>
 
             {/* Townhouse Card */}
             <div className="group relative glass border-2 rounded-2xl shadow-2xl p-8 transition-all hover:backdrop-blur-3xl hover:bg-white/40 hover:transform hover:-translate-y-2">
-              <div className="mb-6">
-                <Home className="h-12 w-12 text-white" />
-              </div>
               <h3 className="text-2xl font-bold text-white mb-4">Townhouse</h3>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-2 text-gray-300">
@@ -406,7 +449,12 @@ Limited 3-Bedroom Park-Facing Townhouses
                   <span>From AED 6.95M</span>
                 </li>
               </ul>
-              <Button className="w-full text-white" onClick={handleDownload}>
+              <Button
+                className="w-full text-white"
+                onClick={() => {
+                  setOpen(true);
+                }}
+              >
                 View Plans
               </Button>
             </div>
@@ -580,31 +628,49 @@ Limited 3-Bedroom Park-Facing Townhouses
           </div>
         </div>
       </section>
+
       <div
-        id="payment"
-        className=" z-0  flex-col flex intro-new-version__bg xl:h-screen bg-[url('/main.jpg')] bg-cover bg-center  items-center justify-center md:p-6  "
+        id="developer"
+        className=" z-0  flex-col flex  xl:h-max items-center justify-center md:p-6 bg-white  "
       >
-        <h3 className="text-white md:text-8xl text-3xl z-0 !text-left w-full md:px-20 px-4 md:mt-0  mt-10">
-          Payment Plan
-        </h3>
+        <div className="flex xl:flex-row flex-col gap-5 w-full  translate-y-28 z-[2]">
+          <h3 className=" z-2   text-black  relative mx-auto md:text-8xl text-3xl !text-left w-full md:px-20 px-4 md:mt-0  mt-10">
+            Trustworthy <br></br>
+            <span className="pl-28 lg:text-white text-black ">Developer</span>
+          </h3>
 
-        <div className="xl:flex-row flex-col flex gap-10 z-0 justify-between w-full md:px-20 px-4 ">
-          <div className="plan">
-            <p className="md:text-[200px] text-9xl text-white">80 %</p>
+          <p className="bg-black text-white text-3xl h-[100px] text-center p-4 ">
+            Since 2002
+          </p>
+          <p className="bg-black text-white text-3xl h-[100px] text-center p-4 ">
+            Delivered approximatelt 118,400+ Units
+          </p>
+        </div>
+        <div className="xl:flex-row  h-[80vh] mx-auto flex-col justify-center items-center flex gap-10 z-0 backdrop-brightness-50  w-full  bg-[url('/developers.jpg')] bg-fixed bg-cover bg-center  ">
+          <div className="flex flex-col gap-4 items-center justify-center backdrop-brightness-[.2] h-full w-full">
+            <h2 className="text-white text-7xl">EMAAR</h2>
 
-            <div className="md:text-5xl text-2xl text-white">
-              During Construction
-            </div>
-          </div>
-          <div className="plan">
-            <p className="md:text-[200px] text-9xl text-white">20 %</p>
-
-            <div className="md:text-5xl text-2xl text-white">on Handover</div>
+            <h4 className="text-white text-3xl">
+              EMAAR’S REVENUE FOR 2024 – AED 35.5 Bn
+            </h4>
+            <p className="text-white text-xl mt-4">
+              With a proven track-record in delivery, Emaar has delivered{" "}
+              <br></br>
+              approximately 118,400+ residential units in Dubai and other global{" "}
+              <br></br>
+              markets since 2002, including notable landmarks such as Burj
+              <br></br>
+              Khalifa, a global icon, and Dubai Mall, the world’s most-visited
+              <br></br>
+              retail and lifestyle destination.
+            </p>
           </div>
         </div>
 
         <button
-          onClick={handleDownloadPaymentPlan}
+          onClick={() => {
+            setOpen(true);
+          }}
           className="btn @@btnClass"
           type="submit"
           fdprocessedid="jq4wj"
@@ -627,7 +693,9 @@ Limited 3-Bedroom Park-Facing Townhouses
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={handleDownloadbrocher}
+              onClick={() => {
+                setOpen(true);
+              }}
               className="btn @@btnClass"
               type="submit"
               fdprocessedid="jq4wj"
@@ -657,6 +725,107 @@ Limited 3-Bedroom Park-Facing Townhouses
           />
         </a>
       </div>
+      <section className="">
+        <Dialog open={open} onOpenChange={setOpen}>
+          <DialogContent className="max-w-md p-6 bg-gray-800 border ">
+            <div className="intro-new-version__form h-max bg-gray-800">
+              <DialogHeader>
+                <DialogTitle className="text-xl font-semibold mb-2">
+                  <h2 className="intro-new-version__form-title">
+                    Secure Your Spot in Exclusive Luxury Property
+                  </h2>
+                </DialogTitle>
+              </DialogHeader>
+
+              <p className="intro-new-version__form-sub">
+                Top-notch Amenities, High-end Finishes, Premium Location
+              </p>
+
+              {submissionStatus === "success" && (
+                <div className="success-message text-green-300">
+                  Thank you! Your submission has been received!
+                </div>
+              )}
+
+              {submissionStatus === "error" && (
+                <div className="error-message text-red-300">
+                  Something went wrong. Please try again.
+                </div>
+              )}
+
+              <form
+                className="intro-new-version__form-from form"
+                onSubmit={handleSubmit}
+                data-gtag-submit=""
+              >
+                {/* Name Input */}
+                <div className="intro-new-version__form-input-wrapper">
+                  <input
+                    className="intro-new-version__form-input"
+                    type="text"
+                    placeholder="Your name"
+                    name="name"
+                    required
+                  />
+                  <div className="intro-new-version__form-icon">
+                    <img
+                      src="https://d3b6muno9lbfvx.cloudfront.net/waterfront-template/s3fs-public/2024-11/input-name-icon.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+
+                {/* Email Input */}
+                <div className="intro-new-version__form-input-wrapper">
+                  <input
+                    className="intro-new-version__form-input"
+                    type="email"
+                    placeholder="Your e-mail"
+                    name="email"
+                    required
+                  />
+                  <div className="intro-new-version__form-icon">
+                    <img
+                      src="https://d3b6muno9lbfvx.cloudfront.net/waterfront-template/s3fs-public/2024-11/input-mail-icon.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+
+                {/* Phone Input - Fixed name attribute */}
+                <div className="intro-new-version__form-input-wrapper intro-new-version__form-input-phone">
+                  <input
+                    className="intro-new-version__form-input"
+                    type="tel"
+                    placeholder="Phone number"
+                    name="phone" // Changed from 'name' to 'phone'
+                    required
+                  />
+                  <div className="intro-new-version__form-icon">
+                    <img
+                      src="https://d3b6muno9lbfvx.cloudfront.net/waterfront-template/s3fs-public/2024-11/input-phone-icon.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+
+                {/* Submit Button */}
+
+                <div className="intro-new-version__form-btn"></div>
+                <button
+                  className="btn @@btnClass"
+                  type="submit"
+                  fdprocessedid="jq4wj"
+                  disabled={submitting}
+                >
+                  <p> {submitting ? "Submitting..." : "Submit"}</p>
+                  <span></span>
+                </button>
+              </form>
+            </div>
+          </DialogContent>
+        </Dialog>
+      </section>
     </>
   );
 }

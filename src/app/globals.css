@@ -12,18 +12,17 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 /* html {
   font-size: 10px;
 } */
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
 .intro-new-version__bg {
   position: relative;
 }
@@ -53,7 +52,6 @@
   @apply md:p-10 p-8;
 }
 .intro-new-version__form-title {
-  font-family: "BwNistaInternationalMedium", serif;
   font-weight: 400;
 
   letter-spacing: -0.05em;
@@ -66,13 +64,12 @@
 }
 
 .intro-new-version__form-sub {
-  font-family: "BwNistaInternationalRegular", serif;
   font-weight: 400;
 
   color: rgba(255, 255, 255, 0.7);
 
   text-align: center;
-  @apply text-xl   md:mb-16 mb-1.5;
+  @apply text-xl   md:mb-6 mb-1.5;
 }
 .intro-new-version__form-from {
   display: flex;
@@ -175,7 +172,7 @@ button {
   width: 40px;
   transition: all 0.4s ease-in-out;
   border-radius: 50%;
-  border: 0.1rem solid var(--color-foreground);
+  border: 0.1rem solid white;
 }
 
 @keyframes leftToRight {
@@ -237,7 +234,6 @@ button {
 }
 
 .intro-new-version__text {
-  font-family: "BwNistaInternationalRegular", serif;
   font-weight: 400;
 
   color: #fff;
@@ -246,7 +242,6 @@ button {
   @apply text-xl;
 }
 .intro-new-version__list-title {
-  font-family: "BwNistaInternationalRegular", serif;
   font-weight: 400;
   font-size: 2rem;
   color: #fff;
@@ -257,7 +252,6 @@ button {
 }
 
 .intro-new-version__list-sub {
-  font-family: "BwNistaInternationalRegular", serif;
   font-weight: 400;
   font-size: 2rem;
   color: #fff;
@@ -276,12 +270,12 @@ button {
 .intro-new-version__item-top {
   font-family: "Roboto", serif;
   font-weight: 700;
-  font-size: 3.2rem;
+
   text-align: center;
   color: #fff;
   margin-bottom: 4px;
 
-  @apply text-3xl;
+  @apply text-2xl;
 }
 
 .intro-new-version__item-bot {
@@ -299,16 +293,16 @@ button {
   @apply md:h-40 h-1 w-32 md:w-[1px];
 }
 
- button[data-state="active"] {
-  color: white;              /* Text color */
+button[data-state="active"] {
+  color: white; /* Text color */
   background-color: #0e1216; /* Background color (blue) */
 }
 
 .whatsapp-fixed {
-    z-index: 1000;
-    position: fixed;
-    bottom: 8rem;
-    right: 3rem;
+  z-index: 1000;
+  position: fixed;
+  bottom: 8rem;
+  right: 3rem;
 }
 
 .whatsapp-button {
@@ -337,24 +331,21 @@ button {
 @media (max-width: 768px) {
   .whatsapp-fixed {
     bottom: 4rem;
-    right:.5rem;
+    right: 0.5rem;
   }
-  
+
   .whatsapp-button {
     width: 56px;
     height: 56px;
   }
-  
+
   .whatsapp-icon {
     width: 28px;
     height: 28px;
   }
 }
 
-
-.glass{
-
-
+.glass {
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.062);
   border-radius: 16px;
@@ -362,4 +353,8 @@ button {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.137);
+}
+
+.close button {
+  color: white !important;
 }
