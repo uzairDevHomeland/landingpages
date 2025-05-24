@@ -23,7 +23,11 @@ function Header() {
             About
           </a>
         </li>
-
+   <li className="xl:text-xl text-base">
+          <a href="#payment" className="hover:text-blue-500 transition-colors">
+            Payment Plan
+          </a>
+        </li>
         <li className="xl:text-xl text-base">
           <a
             href="#amenities"
@@ -32,9 +36,9 @@ function Header() {
             Amenities
           </a>
         </li>
-        <li className="xl:text-xl text-base">
-          <a href="#payment" className="hover:text-blue-500 transition-colors">
-            Payment Plan
+           <li className="xl:text-xl text-base">
+          <a href="#location" className="hover:text-blue-500 transition-colors">
+            Location
           </a>
         </li>
         <li className="xl:text-xl text-base">
@@ -42,11 +46,7 @@ function Header() {
             Brochure
           </a>
         </li>
-        <li className="xl:text-xl text-base">
-          <a href="#location" className="hover:text-blue-500 transition-colors">
-            Location
-          </a>
-        </li>
+  
       </ul>
 
       <div className="flex space-x-4 text-xl items-center">
