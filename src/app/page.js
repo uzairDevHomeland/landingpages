@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Header from "./components/header";
-
+import { useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -14,6 +14,7 @@ import {
   Trees,
   Waves,
   Mountain,
+  Bed,
 } from "lucide-react";
 
 import { Button } from "./components/ui/button";
@@ -21,20 +22,83 @@ import { Card, CardContent } from "./components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 
 export default function Home() {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/ALTAN_DCH_FLOORPLANS.pdf"; // Path relative to `public`
+    link.download = "ALTAN_DCH_FLOORPLANS.pdf"; // Optional: Custom filename
+    link.click();
+  };
+  const handleDownloadbrocher = () => {
+    const link = document.createElement("a");
+    link.href = "/ALTAN_DCH_BROCHURE.pdf"; // Path relative to `public`
+    link.download = "ALTAN_DCH_BROCHURE.pdf"; // Optional: Custom filename
+    link.click();
+  };
+  const handleDownloadPaymentPlan = () => {
+    const link = document.createElement("a");
+    link.href = "/ALTAN_DCH_PAYMENT_PLAN.pdf"; // Path relative to `public`
+    link.download = "ALTAN_DCH_PAYMENT_PLAN.pdf"; // Optional: Custom filename
+    link.click();
+  };
+
+  const [submitting, setSubmitting] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+
+    const formData = new FormData(e.target);
+    const data = {
+      gid: 0, // Fixed gid parameter
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+    };
+
+    try {
+      const scriptUrl = `https://script.google.com/macros/s/AKfycbyyGpvi3LHQ5Oa-mYMFgVbujaglYfSojsS0RqfcXhWtKUg5Ws75hQice97TjNR6T_Yq_A/exec?${new URLSearchParams(
+        data
+      ).toString()}`;
+
+      const response = await fetch(scriptUrl, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setSubmissionStatus("success");
+        e.target.reset(); // Reset form
+      } else {
+        setSubmissionStatus("error");
+      }
+    } catch (error) {
+      setSubmissionStatus("error");
+    } finally {
+      setSubmitting(false);
+    }
+  };
   return (
     <>
       <Header />
 
-      <div className=" intro-new-version__bg  md:h-screen bg-[url('/main.jpg')] bg-cover bg-center flex items-center justify-center md:p-6">
+      <div
+        id="main"
+        className=" intro-new-version__bg  md:h-screen bg-[url('/main.jpg')] bg-cover bg-center flex items-center justify-center md:p-6"
+      >
         <div className="container mx-auto px-4  md:flex-row flex-col flex justify-between  gap-10 p-10 md:p-0   ">
           <div className="intro-new-version__left">
             <p className="intro-new-version__subtitle md:mt-0  mt-10">
               By Emaar
             </p>
-            <h2 className="intro-new-version__title">Altan at Dubai Creek Harbour</h2>
+            <h2 className="intro-new-version__title">
+              Altan at Dubai Creek Harbour
+            </h2>
             <div className="intro-new-version__text-wrapper-desc">
               <p className="intro-new-version__text">
-                 Step into a world where modern elegance meets natural beauty.
+                Step into a world where modern elegance meets natural beauty.
                 Altan, located in the heart of the Green Gate District at Dubai
                 Creek Harbour, offers a lifestyle of serenity, sophistication,
                 and spectacular views — all just 10 minutes from Downtown Dubai
@@ -80,18 +144,32 @@ export default function Home() {
             <p className="intro-new-version__form-sub">
               Top-notch Amenities, High-end Finishes, Premium Location
             </p>
+
+            {submissionStatus === "success" && (
+              <div className="success-message text-green-300">
+                Thank you! Your submission has been received!
+              </div>
+            )}
+
+            {submissionStatus === "error" && (
+              <div className="error-message text-red-300">
+                Something went wrong. Please try again.
+              </div>
+            )}
+
             <form
               className="intro-new-version__form-from form"
+              onSubmit={handleSubmit}
               data-gtag-submit=""
             >
+              {/* Name Input */}
               <div className="intro-new-version__form-input-wrapper">
                 <input
                   className="intro-new-version__form-input"
                   type="text"
                   placeholder="Your name"
                   name="name"
-                  required=""
-                  fdprocessedid="k54fz"
+                  required
                 />
                 <div className="intro-new-version__form-icon">
                   <img
@@ -100,14 +178,15 @@ export default function Home() {
                   />
                 </div>
               </div>
+
+              {/* Email Input */}
               <div className="intro-new-version__form-input-wrapper">
                 <input
                   className="intro-new-version__form-input"
-                  type="mail"
+                  type="email"
                   placeholder="Your e-mail"
                   name="email"
-                  required=""
-                  fdprocessedid="cnbvt7"
+                  required
                 />
                 <div className="intro-new-version__form-icon">
                   <img
@@ -116,16 +195,16 @@ export default function Home() {
                   />
                 </div>
               </div>
+
+              {/* Phone Input - Fixed name attribute */}
               <div className="intro-new-version__form-input-wrapper intro-new-version__form-input-phone">
                 <input
                   className="intro-new-version__form-input"
-                  type="text"
+                  type="tel"
                   placeholder="Phone number"
-                  name="name"
-                  required=""
-                  fdprocessedid="k54fz"
+                  name="phone" // Changed from 'name' to 'phone'
+                  required
                 />
-
                 <div className="intro-new-version__form-icon">
                   <img
                     src="https://d3b6muno9lbfvx.cloudfront.net/waterfront-template/s3fs-public/2024-11/input-phone-icon.svg"
@@ -133,13 +212,17 @@ export default function Home() {
                   />
                 </div>
               </div>
+
+              {/* Submit Button */}
+
               <div className="intro-new-version__form-btn"></div>
               <button
                 className="btn @@btnClass"
                 type="submit"
                 fdprocessedid="jq4wj"
+                disabled={submitting}
               >
-                <p>Submit</p>
+                <p> {submitting ? "Submitting..." : "Submit"}</p>
                 <span></span>
               </button>
             </form>
@@ -147,7 +230,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="py-16 md:py-24 bg-white">
+      <section id="about" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -216,7 +299,7 @@ export default function Home() {
             </div>
             <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden">
               <Image
-                src="/placeholder.svg?height=1000&width=800"
+                src="/main2.jpg"
                 alt="Altan Exterior"
                 fill
                 className="object-cover rounded-xl"
@@ -250,12 +333,9 @@ export default function Home() {
             <TabsContent value="1br" className="mt-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="relative h-[300px] rounded-xl overflow-hidden">
-                  <Image
-                    src="/placeholder.svg?height=600&width=800"
-                    alt="1 Bedroom Apartment"
-                    fill
-                    className="object-cover"
-                  />
+                  <div className="flex items-center justify-center gap-4 h-full w-full">
+                    <Bed className="h-28 w-28 text-gray-700" />
+                  </div>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-gray-900">
@@ -273,7 +353,9 @@ export default function Home() {
                       </span>
                     </li>
                   </ul>
-                  <Button className="mt-4">View Floor Plans</Button>
+                  <Button className="mt-4" onClick={handleDownload}>
+                    View Floor Plans
+                  </Button>
                 </div>
               </div>
             </TabsContent>
@@ -281,12 +363,10 @@ export default function Home() {
             <TabsContent value="2br" className="mt-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="relative h-[300px] rounded-xl overflow-hidden">
-                  <Image
-                    src="/placeholder.svg?height=600&width=800"
-                    alt="2 Bedroom Apartment"
-                    fill
-                    className="object-cover"
-                  />
+                  <div className="flex items-center justify-center gap-4 h-full w-full">
+                    <Bed className="h-28 w-28 text-gray-700" />
+                    <Bed className="h-28 w-28 text-gray-700" />
+                  </div>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-gray-900">
@@ -306,7 +386,9 @@ export default function Home() {
                       </span>
                     </li>
                   </ul>
-                  <Button className="mt-4">View Floor Plans</Button>
+                  <Button className="mt-4" onClick={handleDownload}>
+                    View Floor Plans
+                  </Button>
                 </div>
               </div>
             </TabsContent>
@@ -314,12 +396,11 @@ export default function Home() {
             <TabsContent value="3br" className="mt-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="relative h-[300px] rounded-xl overflow-hidden">
-                  <Image
-                    src="/placeholder.svg?height=600&width=800"
-                    alt="3 Bedroom Apartment"
-                    fill
-                    className="object-cover"
-                  />
+                  <div className="flex items-center justify-center gap-4 h-full w-full">
+                    <Bed className="h-28 w-28 text-gray-700" />{" "}
+                    <Bed className="h-28 w-28 text-gray-700" />{" "}
+                    <Bed className="h-28 w-28 text-gray-700" />
+                  </div>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-gray-900">
@@ -337,7 +418,9 @@ export default function Home() {
                       </span>
                     </li>
                   </ul>
-                  <Button className="mt-4">View Floor Plans</Button>
+                  <Button className="mt-4" onClick={handleDownload}>
+                    View Floor Plans
+                  </Button>
                 </div>
               </div>
             </TabsContent>
@@ -345,12 +428,11 @@ export default function Home() {
             <TabsContent value="townhouse" className="mt-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="relative h-[300px] rounded-xl overflow-hidden">
-                  <Image
-                    src="/placeholder.svg?height=600&width=800"
-                    alt="3 Bedroom Townhouse"
-                    fill
-                    className="object-cover"
-                  />
+                  <div className="flex items-center justify-center gap-4 h-full w-full">
+                    <Bed className="h-28 w-28 text-gray-700" />{" "}
+                    <Bed className="h-28 w-28 text-gray-700" />{" "}
+                    <Bed className="h-28 w-28 text-gray-700" />
+                  </div>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-gray-900">
@@ -370,7 +452,9 @@ export default function Home() {
                       </span>
                     </li>
                   </ul>
-                  <Button className="mt-4">View Floor Plans</Button>
+                  <Button className="mt-4" onClick={handleDownload}>
+                    View Floor Plans
+                  </Button>
                 </div>
               </div>
             </TabsContent>
@@ -379,7 +463,7 @@ export default function Home() {
       </section>
 
       {/* Amenities */}
-      <section className="py-16 md:py-24 bg-white">
+      <section id="amenities" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
@@ -485,7 +569,7 @@ export default function Home() {
       </section>
 
       {/* Location */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section id="location" className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -546,7 +630,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-16 md:py-24 bg-white">
+      <section id="payment" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
@@ -617,24 +701,33 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-5">
+          <Button
+            onClick={handleDownloadPaymentPlan}
+            size="lg"
+            variant="outline"
+            className="border-emerald-700 text-emerald-700 hover:bg-emerald-700/10"
+          >
+            Download Payment Plan <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-emerald-50">
+      <section className="py-16 md:py-24 bg-black">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
             Own Your Dream Home Today
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-white max-w-3xl mx-auto mb-8">
             Own your home in Dubai's future of waterfront living — where every
             day feels like a peaceful escape and every corner is crafted for
             elevated living.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-emerald-700 hover:bg-emerald-800">
-              <Phone className="mr-2 h-5 w-5" /> Contact Sales Team
-            </Button>
             <Button
+              id="brochure"
+              onClick={handleDownloadbrocher}
               size="lg"
               variant="outline"
               className="border-emerald-700 text-emerald-700 hover:bg-emerald-700/10"
@@ -644,6 +737,25 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <div className="whatsapp-fixed">
+        <a
+          href="https://api.whatsapp.com/send/?phone=971527875808&text=Hello&type=phone_number&app_absent=0"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="whatsapp-button"
+          aria-label="Chat on WhatsApp"
+          title="Chat on WhatsApp"
+        >
+          <Image
+            src="/whatapplogo.svg"
+            alt="WhatsApp"
+            width={32}
+            height={32}
+            className="whatsapp-icon"
+          />
+        </a>
+      </div>
     </>
   );
 }

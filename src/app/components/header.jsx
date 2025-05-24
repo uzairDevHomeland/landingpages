@@ -5,43 +5,70 @@ function Header() {
   return (
     <div className="flex justify-between items-center p-4 text-white bg-black sticky top-0 left-0 right-0 z-10">
       <Image
-        className="h-[37px] w-[133px]"
-        src="/mainlogo.svg"
+        className="h-[50px] w-[133px]"
+        src="/altanlogo.png"
         alt="Vercel logomark"
-        width={20}
-        height={20}
+        width={80}
+        height={40}
       />
 
-      <ul className=" space-x-12 md:flex hidden ">
+      <ul className="space-x-12 md:flex hidden">
         <li className="text-xl">
-          <Link href="/dashboard">Main</Link>
+          <a href="#main" className="hover:text-blue-500 transition-colors">
+            Main
+          </a>
         </li>
         <li className="text-xl">
-          <Link href="/dashboard">About</Link>
+          <a href="#about" className="hover:text-blue-500 transition-colors">
+            About
+          </a>
+        </li>
+
+        <li className="text-xl">
+          <a
+            href="#amenities"
+            className="hover:text-blue-500 transition-colors"
+          >
+            Amenities
+          </a>
         </li>
         <li className="text-xl">
-          <Link href="/dashboard">Payment Plan</Link>
+          <a href="#payment" className="hover:text-blue-500 transition-colors">
+            Payment Plan
+          </a>
         </li>
         <li className="text-xl">
-          <Link href="/dashboard">Brochure</Link>
+          <a href="#brochure" className="hover:text-blue-500 transition-colors">
+            Brochure
+          </a>
         </li>
         <li className="text-xl">
-          <Link href="/dashboard">Location</Link>
-        </li>
-        <li className="text-xl">
-          <Link href="/dashboard">Developer</Link>
+          <a href="#location" className="hover:text-blue-500 transition-colors">
+            Location
+          </a>
         </li>
       </ul>
 
       <div className="flex space-x-4 text-xl items-center">
         <a href="tel:+971527875808"> +971527875808</a>
 
-        <Image
-          src="/whatapplogo.svg"
-          alt="Vercel logomark"
-          width={26}
-          height={26}
-        />
+        <a
+          href="https://api.whatsapp.com/send/?phone=971527875808&text=Hello&type=phone_number&app_absent=0"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Contact us on WhatsApp"
+          className="whatsapp-link"
+          role="link"
+          aria-label="Contact via WhatsApp"
+        >
+          <Image
+            src="/whatapplogo.svg"
+            alt="WhatsApp logo"
+            width={26}
+            height={26}
+            className="whatsapp-icon"
+          />
+        </a>
       </div>
     </div>
   );
