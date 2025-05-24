@@ -136,13 +136,10 @@ export default function Main() {
                 and the international airport.
               </p>
               <p className="intro-new-version__list-title"></p>
-              <div className="intro-new-version__lists">
-                <p className="intro-new-version__list-sub"></p>
-                <p className="intro-new-version__list-sub"></p>
-              </div>
+        
             </div>
 
-            <div className="   intro-new-version__items md:flex-row flex-col items-center justify-center md:gap-8 gap-1">
+            <div className=" mt-10   intro-new-version__items md:flex-row flex-col items-center justify-center md:gap-8 gap-4">
               <div className="intro-new-version__item">
                 <p className="intro-new-version__item-top desc2">
                   Available Units:
@@ -345,15 +342,15 @@ export default function Main() {
           Payment Plan
         </h3>
 
-        <div className="xl:flex-row container mx-auto flex-col flex gap-10 z-0 justify-between w-full md:px-20 px-4 ">
+        <div className="flex-row container mx-auto flex gap-10 z-0 justify-between w-full md:px-20 px-4 ">
           <div className="plan">
             <div ref={ref}>
               {inView ? (
                 <CountUp
-                  className="md:text-[200px] text-9xl text-white"
+                  className="md:text-[200px] text-6xl text-white"
                   start={1000}
                   end={80}
-                 duration={10}
+                  duration={2}
                   suffix=" %"
                 />
               ) : (
@@ -361,7 +358,7 @@ export default function Main() {
               )}
             </div>
 
-            <div className="md:text-5xl text-2xl text-white">
+            <div className="md:text-5xl text-xl text-white">
               During Construction
             </div>
           </div>
@@ -369,10 +366,10 @@ export default function Main() {
             <div ref={ref}>
               {inView ? (
                 <CountUp
-                  className="md:text-[200px] text-9xl text-white"
+                  className="md:text-[200px] text-6xl text-white"
                   start={1000}
                   end={20}
-                  duration={10}
+                  duration={2}
                   suffix=" %"
                 />
               ) : (
@@ -380,7 +377,7 @@ export default function Main() {
               )}
             </div>
 
-            <div className="md:text-5xl text-2xl text-white">on Handover</div>
+            <div className="md:text-5xl text-xl text-white">on Handover</div>
           </div>
         </div>
 
@@ -411,7 +408,7 @@ export default function Main() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {/* 1 Bedroom Card */}
-            <div className="group relative glass border-2 rounded-2xl shadow-2xl p-8 transition-all hover:backdrop-blur-3xl hover:bg-white/40 hover:transform hover:-translate-y-2">
+            <div className="group relative glass border-2 rounded-2xl shadow-2xl p-8 flex flex-col md:items-start items-center transition-all hover:backdrop-blur-3xl hover:bg-white/40 hover:transform hover:-translate-y-2">
               <h3 className="text-2xl font-bold text-white mb-4">1 Bedroom</h3>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-2 text-gray-300">
@@ -423,11 +420,10 @@ export default function Main() {
                   <span>From AED 1.81M</span>
                 </li>
               </ul>
-             
             </div>
 
             {/* 2 Bedroom Card */}
-            <div className="group relative glass border-2 rounded-2xl shadow-2xl p-8 transition-all hover:backdrop-blur-3xl hover:bg-white/40 hover:transform hover:-translate-y-2">
+            <div className="group relative glass border-2 rounded-2xl shadow-2xl p-8 flex flex-col md:items-start items-center transition-all hover:backdrop-blur-3xl hover:bg-white/40 hover:transform hover:-translate-y-2">
               <h3 className="text-2xl font-bold text-white mb-4">2 Bedroom</h3>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-2 text-gray-300">
@@ -439,11 +435,10 @@ export default function Main() {
                   <span>From AED 2.71M</span>
                 </li>
               </ul>
-             
             </div>
 
             {/* 3 Bedroom Card */}
-            <div className="group relative glass border-2 rounded-2xl shadow-2xl p-8 transition-all hover:backdrop-blur-3xl hover:bg-white/40 hover:transform hover:-translate-y-2">
+            <div className="group relative glass border-2 rounded-2xl shadow-2xl p-8 flex flex-col md:items-start items-center transition-all hover:backdrop-blur-3xl hover:bg-white/40 hover:transform hover:-translate-y-2">
               <h3 className="text-2xl font-bold text-white mb-4">3 Bedroom</h3>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-2 text-gray-300">
@@ -455,11 +450,10 @@ export default function Main() {
                   <span>From AED 4.11M</span>
                 </li>
               </ul>
-             
             </div>
 
             {/* Townhouse Card */}
-            <div className="group relative glass border-2 rounded-2xl shadow-2xl p-8 transition-all hover:backdrop-blur-3xl hover:bg-white/40 hover:transform hover:-translate-y-2">
+            <div className="group relative glass border-2 rounded-2xl shadow-2xl p-8 flex flex-col md:items-start items-center transition-all hover:backdrop-blur-3xl hover:bg-white/40 hover:transform hover:-translate-y-2">
               <h3 className="text-2xl font-bold text-white mb-4">Townhouse</h3>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-center gap-2 text-gray-300">
@@ -471,11 +465,10 @@ export default function Main() {
                   <span>From AED 6.95M</span>
                 </li>
               </ul>
-             
             </div>
           </div>
 
- <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => {
                 setOpen(true);
@@ -488,7 +481,6 @@ export default function Main() {
               <span></span>
             </button>
           </div>
-
         </div>
       </section>
 
@@ -663,35 +655,39 @@ export default function Main() {
         id="developer"
         className=" z-0  flex-col flex  xl:h-max items-center justify-center md:p-6 bg-white  "
       >
-        <div className="flex xl:flex-row flex-col gap-5 w-full  translate-y-28 z-[2]">
-          <h3 className=" z-2   text-black  relative mx-auto md:text-8xl text-3xl !text-left w-full md:px-20 px-4 md:mt-0  mt-10">
+        <div className="flex xl:flex-row flex-col gap-5 w-full  lg:translate-y-28 z-[2]">
+          <h3 className=" z-2  hidden lg:block  text-black  relative mx-auto md:text-8xl text-3xl !text-left w-full md:px-20 px-4 md:mt-0  mt-10">
             Trustworthy <br></br>
             <span className="pl-28 lg:text-white text-black ">Developer</span>
           </h3>
 
-          <p className="bg-[#151E34] text-white text-3xl h-[100px] text-center p-4 ">
+          <h3 className=" z-2 text-center font-semibold   lg:hidden  text-black  relative mx-auto md:text-8xl text-3xl  w-full md:px-20 px-4 md:mt-0  mt-10">
+            Trustworthy Developer
+          </h3>
+
+          <p className="bg-[#151E34] text-white text-3xl h-[100px] text-center p-4 flex items-center justify-center ">
             Since 2002
           </p>
-          <p className="bg-[#151E34] text-white text-3xl h-[100px] text-center p-4 ">
+          <p className="bg-[#151E34] text-white text-3xl h-[100px] text-center p-4 flex items-center justify-center ">
             Delivered approximatelt 118,400+ Units
           </p>
         </div>
-        <div className="xl:flex-row  h-[40vh] mx-auto flex-col justify-center items-center flex gap-10 z-0 backdrop-brightness-50  w-full  bg-[url('/developers.jpg')] bg-fixed bg-cover bg-center  ">
-          <div className="flex flex-col gap-4 p-6 md:p-0 items-center justify-center backdrop-brightness-[.2] h-full w-full">
+        <div className="xl:flex-row  md:h-[500px] h-[700px] mx-auto flex-col justify-center items-center flex gap-10 z-0 backdrop-brightness-50  w-full  bg-[url('/developers.jpg')] bg-fixed bg-cover bg-center  ">
+          <div className="flex flex-col gap-4 p-6 md:p-0 items-center justify-center backdrop-brightness-[.2] h-full w-full py-2">
             <h2 className="text-white text-7xl">
               <Image
                 src="/Emaar Logo.png"
                 alt="emaar"
                 width={280}
-                height={32}
-                className="whatsapp-icon"
+                height={200}
+                className="mt-28"
               />
             </h2>
 
             <h4 className="text-white text-3xl">
               EMAAR’S REVENUE FOR 2024 – AED 35.5 Bn
             </h4>
-            <p className="text-white text-xl mt-4">
+            <p className="text-white text-xl mt-4 mb-10">
               With a proven track-record in delivery, Emaar has delivered{" "}
               <br></br>
               approximately 118,400+ residential units in Dubai and other global{" "}
@@ -868,9 +864,9 @@ export default function Main() {
 
       <section className="footer  bg-[#151E34]">
         <div className="container mx-auto flex   gap-10  lg:p-0 p-6 justify-center items-center">
-          <div className="flex flex-col gap-10">
-            <ul className="space-x-10 lg:flex lg:flex-row flex-col text-white">
-              <li className="xl:text-xl text-base">
+          <div className="flex flex-col gap-4 justify-center items-center  w-full">
+            <ul className="space-x-10  gap-2 grid grid-cols-3 md:flex flex-row items-center justify-center text-white w-full flex-wrap">
+              <li className="xl:text-xl text-xs text-left">
                 <a
                   href="#main"
                   className="hover:text-blue-500 transition-colors"
@@ -878,7 +874,7 @@ export default function Main() {
                   Main
                 </a>
               </li>
-              <li className="xl:text-xl text-base">
+              <li className="xl:text-xl text-xs text-left">
                 <a
                   href="#about"
                   className="hover:text-blue-500 transition-colors"
@@ -887,7 +883,7 @@ export default function Main() {
                 </a>
               </li>
 
-              <li className="xl:text-xl text-base">
+              <li className="xl:text-xl text-xs text-left">
                 <a
                   href="#amenities"
                   className="hover:text-blue-500 transition-colors"
@@ -895,7 +891,7 @@ export default function Main() {
                   Amenities
                 </a>
               </li>
-              <li className="xl:text-xl text-base">
+              <li className="xl:text-xl text-xs text-left">
                 <a
                   href="#payment"
                   className="hover:text-blue-500 transition-colors"
@@ -903,7 +899,7 @@ export default function Main() {
                   Payment Plan
                 </a>
               </li>
-              <li className="xl:text-xl text-base">
+              <li className="xl:text-xl text-xs text-left">
                 <a
                   href="#brochure"
                   className="hover:text-blue-500 transition-colors"
@@ -911,7 +907,7 @@ export default function Main() {
                   Brochure
                 </a>
               </li>
-              <li className="xl:text-xl text-base">
+              <li className="xl:text-xl text-xs text-left">
                 <a
                   href="#location"
                   className="hover:text-blue-500 transition-colors"
@@ -941,18 +937,18 @@ export default function Main() {
                   className="whatsapp-icon"
                 />
               </a>
-              <button
-                onClick={() => {
-                  setOpen(true);
-                }}
-                className="btn @@btnClass"
-                type="submit"
-                fdprocessedid="jq4wj"
-              >
-                <p> Request a Call</p>
-                <span></span>
-              </button>
             </div>
+            <button
+              onClick={() => {
+                setOpen(true);
+              }}
+              className="btn @@btnClass"
+              type="submit"
+              fdprocessedid="jq4wj"
+            >
+              <p> Request a Call</p>
+              <span></span>
+            </button>
           </div>
         </div>
       </section>
