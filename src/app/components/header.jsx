@@ -53,7 +53,7 @@ function Header() {
         <a href="tel:+971556610000"> +971 55 661 0000</a>
 
         <a
-          href="https://api.whatsapp.com/send/?phone=971556610000&text=Hello&type=phone_number&app_absent=0"
+          href="https://api.whatsapp.com/send/?phone=971556610000&text=I want to know more Details about Altan&type=phone_number&app_absent=0"
           target="_blank"
           rel="noopener noreferrer"
           title="Contact us on WhatsApp"
