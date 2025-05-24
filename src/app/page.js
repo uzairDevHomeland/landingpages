@@ -423,14 +423,7 @@ export default function Main() {
                   <span>From AED 1.81M</span>
                 </li>
               </ul>
-              <Button
-                className="w-full text-white"
-                onClick={() => {
-                  setOpen(true);
-                }}
-              >
-                View Plans
-              </Button>
+             
             </div>
 
             {/* 2 Bedroom Card */}
@@ -446,14 +439,7 @@ export default function Main() {
                   <span>From AED 2.71M</span>
                 </li>
               </ul>
-              <Button
-                className="w-full text-white"
-                onClick={() => {
-                  setOpen(true);
-                }}
-              >
-                View Plans
-              </Button>
+             
             </div>
 
             {/* 3 Bedroom Card */}
@@ -469,14 +455,7 @@ export default function Main() {
                   <span>From AED 4.11M</span>
                 </li>
               </ul>
-              <Button
-                className="w-full text-white"
-                onClick={() => {
-                  setOpen(true);
-                }}
-              >
-                View Plans
-              </Button>
+             
             </div>
 
             {/* Townhouse Card */}
@@ -492,16 +471,24 @@ export default function Main() {
                   <span>From AED 6.95M</span>
                 </li>
               </ul>
-              <Button
-                className="w-full text-white"
-                onClick={() => {
-                  setOpen(true);
-                }}
-              >
-                View Plans
-              </Button>
+             
             </div>
           </div>
+
+ <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={() => {
+                setOpen(true);
+              }}
+              className="btn @@btnClass"
+              type="submit"
+              fdprocessedid="jq4wj"
+            >
+              <p> View Plans</p>
+              <span></span>
+            </button>
+          </div>
+
         </div>
       </section>
 
