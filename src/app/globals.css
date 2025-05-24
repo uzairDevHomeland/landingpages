@@ -49,6 +49,8 @@
   backdrop-filter: blur(16px);
   background: rgba(0, 0, 0, 0.15);
   border-radius: 6px;
+
+  @apply md:p-16 p-8;
 }
 .intro-new-version__form-title {
   font-family: "BwNistaInternationalMedium", serif;

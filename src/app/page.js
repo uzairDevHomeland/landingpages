@@ -44,42 +44,39 @@ export default function Home() {
   const [submitting, setSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(null);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitting(true);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setSubmitting(true);
 
-    const formData = new FormData(e.target);
-    const data = {
-      gid: 0, // Fixed gid parameter
-      name: formData.get("name"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-    };
-
-    try {
-      const scriptUrl = `https://script.google.com/macros/s/AKfycbyyGpvi3LHQ5Oa-mYMFgVbujaglYfSojsS0RqfcXhWtKUg5Ws75hQice97TjNR6T_Yq_A/exec?${new URLSearchParams(
-        data
-      ).toString()}`;
-
-      const response = await fetch(scriptUrl, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      if (response.ok) {
-        setSubmissionStatus("success");
-        e.target.reset(); // Reset form
-      } else {
-        setSubmissionStatus("error");
-      }
-    } catch (error) {
-      setSubmissionStatus("error");
-    } finally {
-      setSubmitting(false);
-    }
+  const formData = new FormData(e.target);
+  const data = {
+    username: formData.get("name"), // Changed 'name' to 'username' to match your original question
+    email: formData.get("email"),
+    phone: formData.get("phone"),
   };
+
+  try {
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbyyGpvi3LHQ5Oa-mYMFgVbujaglYfSojsS0RqfcXhWtKUg5Ws75hQice97TjNR6T_Yq_A/exec';
+
+    const response = await fetch(scriptUrl, {
+      method: "POST", // Changed from GET to POST
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({ ...data, gid: '0' }).toString(), // Include gid in the body
+      mode: 'no-cors', // Required for Google Apps Script
+    });
+
+    // Since 'no-cors' prevents reading the response, assume success if no error
+    setSubmissionStatus("success");
+    e.target.reset(); // Reset form
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    setSubmissionStatus("error");
+  } finally {
+    setSubmitting(false);
+  }
+};
   return (
     <>
       <Header />
@@ -740,7 +737,7 @@ export default function Home() {
 
       <div className="whatsapp-fixed">
         <a
-          href="https://api.whatsapp.com/send/?phone=971527875808&text=Hello&type=phone_number&app_absent=0"
+          href="https://api.whatsapp.com/send/?phone=971556610000&text=Hello&type=phone_number&app_absent=0"
           target="_blank"
           rel="noopener noreferrer"
           className="whatsapp-button"
