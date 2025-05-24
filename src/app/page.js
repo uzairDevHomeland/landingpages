@@ -719,7 +719,7 @@ export default function Main() {
       </div>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-[#151E34]">
+      <section id="brochure" className="py-16 md:py-24 bg-[#151E34]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
             Own Your Dream Home Today
